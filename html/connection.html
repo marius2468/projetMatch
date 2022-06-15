@@ -1,10 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chrono Match</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
 </head>
 <body>
 
+<nav class="navbar bg-clearBlue">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="../img/logo.svg" alt="logo" height="50">
+        </a>
+    </div>
+</nav>
+
+<div class="position-relative justify-content-center start-25 w-50 row">
+
+    <h1 class="form-label d-flex justify-content-center">Connexion</h1>
+
+    <label class="form-label d-flex justify-content-center">J'ai déja un compte</label>
+    <div class="mb-3">
+        <input type="email" class="shadow-inset shadow form-control" id="nameInput" placeholder="E-mail">
+    </div>
+
+    <div class="mb-3">
+        <input type="email" class="form-control shadow-inset" id="surnameInput" placeholder="Mot de passe">
+    </div>
+
+    <a class="btn btn-clearBlue nav-item text-white shadow p-3 mb-5 rounded" href="#">Se connecter</a>
+    <label class="form-label d-flex justify-content-center">Pas de compte ?</label>
+    <a class="btn btn-clearYellow nav-item text-white shadow p-3 mb-5 rounded" href="#">S'inscrire</a>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>
