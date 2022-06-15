@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,15 +8,37 @@
 </head>
 <body>
 
-<nav class="navbar bg-clearBlue">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-            <img src="img/Logo_Chrono_Match.png" alt="logo" height="50">
-        </a>
-        <div class="navbar-nav d-inline-block">
-            <a class="btn btn-clearYellow nav-item" href="#">Joueur</a>
-            <a class="btn btn-clearYellow nav-item" href="#">Organisateur</a>
-            <a class="btn btn-clearYellow nav-item" href="#">Profile</a>
+<!-- Navbar  -->
+<nav class="navbar fixed-top navbar-expand-lg bg-clearBlue p-md-3">
+    <div class="container">
+        <a class="navbar-brand" href="#"><img src="img/logo.svg" alt="logo" height="50"></a>
+        <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+        >
+            <img src="img/burger.svg" alt="burger">
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="mx-auto"></div>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link btn btn-clearYellow" href="#">Joueur</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-clearYellow" href="#">Organisateur</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <img src="img/profile.svg" alt="profile" height="50">
+                    </a>
+                </li>
+            </ul>
         </div>
     </div>
 </nav>
