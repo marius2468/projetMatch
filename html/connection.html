@@ -8,30 +8,32 @@
 </head>
 <body>
 
-<nav class="navbar bg-clearBlue">
+<nav class="navbar sticky-top bg-clearBlue">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
-            <img src="../img/logo.svg" alt="logo" height="50">
+            <img src="../img/logo.svg" alt="logo" height="100">
         </a>
     </div>
 </nav>
 
 <div class="position-relative justify-content-center start-25 w-50 row">
 
-    <h1 class="form-label d-flex justify-content-center p-3 mb-5">Connexion</h1>
+    <h1 class="form-label d-flex justify-content-center p-3">Connexion</h1>
 
     <label class="form-label d-flex justify-content-center mb-3">J'ai déja un compte</label>
-    <div class="mb-3">
-        <input type="email" class="form-control p-3 mb-5 rounded-3 bg-clearGrey" style="box-shadow:inset 0px 4px 4px rgba(0, 0, 0, 0.12)" id="nameInput;" placeholder="E-mail">
+    <div class="form-floating mb-3">
+        <input type="email" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="mailInput" placeholder="nom@exemple.com">
+        <label class="ps-4 text-darkGrey" for="mailInput">E-mail</label>
     </div>
 
-    <div class="mb-3">
-        <input type="password" class="form-control p-3 mb-5 bg-clearGrey rounded-3" style="box-shadow:inset 0px 4px 4px rgba(0, 0, 0, 0.12)" placeholder="Mot de passe">
+    <div class="form-floating mb-3">
+        <input type="password" class="form-control bg-clearGrey rounded-3 shadow shadow-inset" id="passwordInput" placeholder="Password">
+        <label class="ps-4 text-darkGrey" for="passwordInput">Password</label>
     </div>
 
     <a class="btn btn-clearBlue nav-item text-white shadow-lg p-3 mb-5 rounded-3" href="#">Se connecter</a>
     <label class="form-label d-flex justify-content-center">Pas de compte ?</label>
-    <a class="btn btn-clearYellow nav-item text-white shadow-lg p-3 mb-5 rounded-3" href="#">S'inscrire</a>
+    <a class="btn btn-darkYellow nav-item text-white shadow-lg p-3 mb-5 rounded-3" href="register.html">S'inscrire</a>
 
 </div>
 
