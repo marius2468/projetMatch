@@ -31,10 +31,9 @@
     </script>
 </head>
 <body>
-<!-- Navbar  -->
 <nav class="navbar sticky-top navbar-fixed-top navbar-expand-lg bg-clearBlue p-md-3">
     <div class="container">
-        <a class="navbar-brand" href="#"><img src="img/logo.svg" alt="logo" height="50"></a>
+        <a class="navbar-brand" href="#"><img src="img/logo.svg" alt="logo" height="50" id="logo"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <img src="img/burger.svg" alt="burger">
         </button>
@@ -53,16 +52,16 @@
 
 <div class="container-fluid">
     <div class="row flex-nowrap">
-        <div class="col-auto col-md-4 col-xl-3 bg-clearBlue m-1 rounded shadow-lg">
-            <div class="d-flex flex-column align-items-center align-items-sm-center pt-2 text-white min-vh-100">
-                <div class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start gap-3">
-                    <div class="nav-item btn btn-clearYellow w-100">
-                        <a href="#" class="nav-link align-middle px-0">
+        <div class="col-auto bg-clearBlue m-1 rounded shadow shadow-lg">
+            <div class="d-flex flex-column align-items-center align-items-sm-start text-white min-vh-100 pt-2">
+                <div class="nav nav-pills flex-column align-items-center align-items-sm-start gap-3">
+                    <div class="nav-item btn btn-clearYellow w-100 shadow shadow-lg">
+                        <a href="#" class="nav-link align-middle">
                             <img src="img/search.svg" alt="search"><span class="ms-3 d-none d-sm-inline text-decoration-none text-white">Rechercher des matchs</span>
                         </a>
                     </div>
-                    <div class="nav-item btn btn-clearYellow w-100">
-                        <a href="#" class="nav-link align-middle px-0">
+                    <div class="nav-item btn btn-clearYellow w-100 shadow shadow-lg">
+                        <a href="#" class="nav-link align-middle">
                             <img src="img/calendar.svg" alt="calendar"><span class="ms-3 d-none d-sm-inline text-decoration-none text-white">Mes matchs</span>
                         </a>
                     </div>
@@ -70,29 +69,41 @@
             </div>
         </div>
         <div class="col py-3">
-            <form>
-                <div class="row justify-content-between">
-                    <div class="col-3">
-                        <label class="form-label" for="ville">Ville</label>
-                        <input class="form-input" type="text" id="ville" placeholder="Nantes">
-                    </div>
-                    <div class="col-3">
-                        <label class="form-label" for="sport">Sport</label>
-                        <input class="form-input" type="text" id="sport" placeholder="FootBall">
-                    </div>
-                    <div class="col-2">
-                        <label class="form-label" for="complet">Complet</label>
-                        <input class="form-input" type="checkbox" id="complet" value="complet">
-                    </div>
-                    <div class="col-2">
-                        Recherche
-                    </div>
+            <form class="form">
+                <div class="form-control col-xs-12 col-sm-6 col-md-4 col-lg-2">
+
                 </div>
             </form>
         </div>
     </div>
 </div>
 
+<footer class="bg-clearBlue text-white text-center text-md-start">
+    <div class="container p-4">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                <img src="img/logo.svg" alt="logo" height="50">
+                <p>
+                    Bienvenue sur notre site ChronoMatch où vous pouvez réserver ou créer des matchs à tout instant.
+                </p>
+            </div>
+            <div class="col-lg-6 col-md-6 mb-4 mb-md-0 text-clearYellow">
+                <h5 class="text-uppercase fw-bold">Contact</h5>
+                <ul class="list-unstyled mb-0">
+                    <li>Mentions légales</li>
+                    <li>Recrutement</li>
+                    <li>FAQ</li>
+                    <li>A propos</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="text-center p-3">
+        © 2022 Copyright:
+        <a class="text-white" href="#">ChronoMatch.com</a>
+    </div>
+    <!-- Copyright -->
+</footer>
 
 </body>
 </html>
