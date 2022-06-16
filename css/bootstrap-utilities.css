@@ -488,6 +488,10 @@
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
 }
 
+.shadow-inset {
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.12) !important;
+}
+
 .shadow-none {
   box-shadow: none !important;
 }

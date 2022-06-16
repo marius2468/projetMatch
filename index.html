@@ -32,7 +32,7 @@
 </head>
 <body>
 <!-- Navbar  -->
-<nav class="navbar fixed-top navbar-expand-lg bg-clearBlue p-md-3">
+<nav class="navbar sticky-top navbar-fixed-top navbar-expand-lg bg-clearBlue p-md-3">
     <div class="container">
         <a class="navbar-brand" href="#"><img src="img/logo.svg" alt="logo" height="50"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,5 +50,49 @@
         </div>
     </div>
 </nav>
+
+<div class="container-fluid">
+    <div class="row flex-nowrap">
+        <div class="col-auto col-md-4 col-xl-3 bg-clearBlue m-1 rounded shadow-lg">
+            <div class="d-flex flex-column align-items-center align-items-sm-center pt-2 text-white min-vh-100">
+                <div class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start gap-3">
+                    <div class="nav-item btn btn-clearYellow w-100">
+                        <a href="#" class="nav-link align-middle px-0">
+                            <img src="img/search.svg" alt="search"><span class="ms-3 d-none d-sm-inline text-decoration-none text-white">Rechercher des matchs</span>
+                        </a>
+                    </div>
+                    <div class="nav-item btn btn-clearYellow w-100">
+                        <a href="#" class="nav-link align-middle px-0">
+                            <img src="img/calendar.svg" alt="calendar"><span class="ms-3 d-none d-sm-inline text-decoration-none text-white">Mes matchs</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col py-3">
+            <form>
+                <div class="row justify-content-between">
+                    <div class="col-3">
+                        <label class="form-label" for="ville">Ville</label>
+                        <input class="form-input" type="text" id="ville" placeholder="Nantes">
+                    </div>
+                    <div class="col-3">
+                        <label class="form-label" for="sport">Sport</label>
+                        <input class="form-input" type="text" id="sport" placeholder="FootBall">
+                    </div>
+                    <div class="col-2">
+                        <label class="form-label" for="complet">Complet</label>
+                        <input class="form-input" type="checkbox" id="complet" value="complet">
+                    </div>
+                    <div class="col-2">
+                        Recherche
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
 </body>
 </html>
