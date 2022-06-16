@@ -69,9 +69,41 @@
             </div>
         </div>
         <div class="col py-3">
-            <form class="form">
-                <div class="form-control col-xs-12 col-sm-6 col-md-4 col-lg-2">
-
+            <form class="row row-cols-lg-auto g-3 align-items-center bg-clearGrey mt-1 rounded shadow py-3">
+                <div class="col-12 m-auto">
+                    <label class="visually-hidden" for="inlineFormInputGroupUsername">Ville</label>
+                    <input type="text" class="form-control bg-greySearch shadow-sm shadow-inset" id="inlineFormInputGroupUsername" placeholder="Ville">
+                </div>
+                <div class="col-12 m-auto">
+                    <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+                    <select class="form-select bg-greySearch shadow-sm shadow-inset" id="inlineFormSelectPref">
+                        <option selected>Choisir Sport...</option>
+                        <option value="1">FootBall</option>
+                        <option value="2">BasketBall</option>
+                        <option value="3">BaseBall</option>
+                    </select>
+                </div>
+                <div class="col-12 m-auto">
+                    <label class="visually-hidden" for="inlineFormSelect">Preference</label>
+                    <select class="form-select bg-greySearch shadow-sm shadow-inset" id="inlineFormSelect">
+                        <option selected>Choisir Période...</option>
+                        <option value="1">+7j</option>
+                        <option value="2">+15j</option>
+                        <option value="3">+30</option>
+                    </select>
+                </div>
+                <div class="col-12 m-auto">
+                    <div class="form-check">
+                        <input class="form-check-input bg-greySearch shadow shadow-inset" type="checkbox" id="inlineFormCheck">
+                        <label class="form-check-label" for="inlineFormCheck">
+                            Complet
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12 m-auto">
+                    <button type="submit" class="btn btn-clearYellow shadow">
+                        <img src="img/search.svg" alt="search"><span class="ms-3 d-none d-sm-inline text-decoration-none text-white">Rechercher</span>
+                    </button>
                 </div>
             </form>
         </div>

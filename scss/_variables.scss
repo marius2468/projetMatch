@@ -53,6 +53,7 @@ $darkYellow: #FFC300;
 $clearYellow: #FFD60A;
 $darkGrey: #5D5D5D;
 $clearGrey: #ECECEC;
+$greySearch: #D9D9D9;
 // scss-docs-end color-variables
 
 // scss-docs-start colors-map
@@ -332,6 +333,7 @@ $theme-colors: (
   "clearYellow":$clearYellow,
   "clearGrey":  $clearGrey,
   "darkGrey":   $darkGrey,
+  "greySearch": $greySearch
 ) !default;
 // scss-docs-end theme-colors-map
 

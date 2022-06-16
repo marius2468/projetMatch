@@ -28,6 +28,8 @@ $utilities: map-merge(
       property: opacity,
       values: (
         0: 0,
+        2: .02,
+        5: .05,
         25: .25,
         50: .5,
         75: .75,
