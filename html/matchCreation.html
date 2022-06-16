@@ -46,59 +46,59 @@
             </div>
         </div>
 
-        <div class="">
-            <h1 class="form-label justify-content-center p-3">Création d'un match</h1>
+        <div class="col py-3 row">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="form-label d-flex justify-content-center p-3">Création d'un match</h1>
 
-            <div class="d-flex align-items-end mb-3">
-                <img src="../img/profilAdd.svg" alt="logo" height="100">
-                <div class="mb-3">
-                    <input class="form-control d-flex justify-content-center" type="file" id="formFile">
+                    <label class="form-label flex-nowrap">Type de sport*</label>
+                    <div class="form-floating mb-3 d-flex">
+                        <input type="text" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="sportInput" placeholder="sport">
+                        <label class="ps-4 text-darkGrey" for="sportInput">Entrez le type de sport</label>
+                    </div>
+
+                    <label class="form-label flex-nowrap">Nombre de joueurs maximum*</label>
+                    <div class="form-floating mb-3 d-flex">
+                        <input type="text" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="maxPlayersInput" placeholder="nombreMax">
+                        <label class="ps-4 text-darkGrey" for="maxPlayersInput">Entrez le nombre max de joueurs</label>
+                    </div>
+
+                    <label class="form-label flex-nowrap">Ville</label>
+                    <div class="form-floating mb-3 d-flex">
+                        <input type="text" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="townInput" placeholder="ville">
+                        <label class="ps-4 text-darkGrey" for="townInput">Entrez la ville du match</label>
+                    </div>
+
+                    <label class="form-label flex-nowrap">Adresse</label>
+                    <div class="form-floating mb-3 d-flex">
+                        <input type="text" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="addressInput" placeholder="address">
+                        <label class="ps-4 text-darkGrey" for="addressInput">Entrez l'adresse du match</label>
+                    </div>
+
+                    <label class="form-label flex-nowrap">Heure*</label>
+                    <div class="form-floating mb-3 d-flex">
+                        <input type="text" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="hourInput" placeholder="hour">
+                        <label class="ps-4 text-darkGrey" for="hourInput">Entrez l'heure de début du match</label>
+                    </div>
+
+                    <label class="form-label flex-nowrap">Durée*</label>
+                    <div class="form-floating mb-3 d-flex">
+                        <input type="text" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="durationInput" placeholder="duration">
+                        <label class="ps-4 text-darkGrey" for="durationInput">Entrez la durée d'un match</label>
+                    </div>
+
+                    <label class="form-label flex-nowrap">Prix*</label>
+                    <div class="form-floating mb-3 d-flex">
+                        <input type="text" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="priceInput" placeholder="price">
+                        <label class="ps-4 text-darkGrey" for="priceInput">Entrez le prix du match</label>
+                    </div>
+
+                    <label class="form-label">*Champs obligatoires</label>
+                    <a class="btn btn-darkYellow d-flex nav-item text-white shadow-lg p-3 mb-5 rounded-3 justify-content-center" href="#"><span>Créer le match</span></a>
                 </div>
             </div>
-
-
-            <label class="form-label d-flex">Nom*</label>
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="nameInput" placeholder="nom">
-                <label class="ps-4 text-darkGrey" for="nameInput">Entrez votre nom</label>
-            </div>
-
-            <label class="form-label d-flex">Prénom*</label>
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="surnameInput" placeholder="prénom">
-                <label class="ps-4 text-darkGrey" for="surnameInput">Entrez votre prénom</label>
-            </div>
-
-            <label class="form-label d-flex">Ville</label>
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="townInput" placeholder="ville">
-                <label class="ps-4 text-darkGrey" for="townInput">Entrez votre ville</label>
-            </div>
-
-            <label class="form-label d-flex">E-Mail*</label>
-            <div class="form-floating mb-2">
-                <input type="email" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="mailInput" placeholder="mail">
-                <label class="ps-4 text-darkGrey" for="mailInput">Entrez votre e-mail</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="email" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="mailInput2" placeholder="mail">
-                <label class="ps-4 text-darkGrey" for="mailInput2">Confirmation de votre e-mail</label>
-            </div>
-
-            <label class="form-label d-flex">Mot de passe*</label>
-            <div class="form-floating mb-2">
-                <input type="password" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="passwordInput" placeholder="mot de  passe">
-                <label class="ps-4 text-darkGrey" for="mailInput">Entrez un mot de passe</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="password" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="passwordInput2" placeholder="mot de passe">
-                <label class="ps-4 text-darkGrey" for="mailInput2">Confirmation du mot de passe</label>
-            </div>
-
-            <label class="form-label">*Champs obligatoires</label>
-
-            <a class="btn btn-darkYellow nav-item text-white shadow-lg p-3 mb-5 rounded-3" href="../index.html">S'inscrire</a>
         </div>
+
 
     </div>
 </div>
