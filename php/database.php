@@ -109,21 +109,19 @@ function dbSearchMatch($db, $city, $sport, $period, $complete)
 
 function dbFutureMatch($db, $id_person){
     try {
-        $request = "SELECT c.city, s.sport, m.date_time, m.max_player_nb, count(p.id_player)
+        $request = "SELECT c.city, s.sport, m.date_time, m.max_player_nb, count(p.id_person)
                     FROM match m 
                     INNER JOIN city c USING(id_city)
                     INNER JOIN sport s USING(id_sport)
                     INNER JOIN player_match p USING(id_match)
-                    WHERE c.name=:nameCity
-                    AND m.date_time<:datePeriod
-                    AND m.date_time>:dateToday
-                    AND s.name=:nameSport 
-                    AND p.accept=true";
+                    WHERE m.date_time>:dateToday
+                    AND p.id_person=:id_person";
         $dateToday = date('Y-m-d');
 
-        if ($dateToday <= $datematch){
-
-        }
+        $statement = $db->prepare($request);
+        $statement->bindParam(':dateToday', $dateToday, PDO::PARAM_STR, 200);
+        $statement->bindParam(':id_person', $id_person, PDO::PARAM_INT);
+        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
     }
     catch (PDOException $exception) {
         error_log('Request error: ' . $exception->getMessage());
@@ -131,3 +129,27 @@ function dbFutureMatch($db, $id_person){
     }
     return $result;
 }
+
+function dbPassedMatch($db, $id_person){
+    try {
+        $request = "SELECT c.city, s.sport, m.date_time, m.max_player_nb, count(p.id_person)
+                    FROM match m 
+                    INNER JOIN city c USING(id_city)
+                    INNER JOIN sport s USING(id_sport)
+                    INNER JOIN player_match p USING(id_match)
+                    WHERE m.date_time<:dateToday
+                    AND p.id_person=:id_person";
+        $dateToday = date('Y-m-d');
+
+        $statement = $db->prepare($request);
+        $statement->bindParam(':dateToday', $dateToday, PDO::PARAM_STR, 200);
+        $statement->bindParam(':id_person', $id_person, PDO::PARAM_INT);
+        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
+    catch (PDOException $exception) {
+        error_log('Request error: ' . $exception->getMessage());
+        return false;
+    }
+    return $result;
+}
+
