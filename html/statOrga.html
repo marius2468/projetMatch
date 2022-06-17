@@ -32,12 +32,14 @@
 </head>
 <body>
 
+<!--HEADER-->
+
 <nav class="navbar sticky-top navbar-fixed-top navbar-expand-lg bg-clearBlue p-md-3">
     <div class="container">
         <a class="navbar-brand" href="#"><img src="../img/logo.svg" alt="logo" height="50" id="logo"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="btn btn-darkYellow navbar-toggler border-0 pb-2 shadow" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <img src="../img/burger.svg" alt="burger">
-        </button>
+        </a>
         <div class="collapse navbar-collapse" id="navbarNav">
             <div class="mx-auto"></div>
             <div class="navbar-nav gap-3">
@@ -51,24 +53,26 @@
     </div>
 </nav>
 
+<!--HEADER-->
+
 <div class="container-fluid">
     <div class="row flex-nowrap">
         <div class="col-auto bg-clearBlue m-1 rounded shadow shadow-lg">
             <div class="d-flex flex-column align-items-center align-items-sm-start text-white min-vh-100 pt-2">
                 <div class="nav nav-pills flex-column align-items-center align-items-sm-start gap-3">
-                    <div class="nav-item btn btn-darkYellow w-100 shadow">
+                    <div class="nav-item btn btn-darkYellow shadow">
                         <a href="matchCreation.html" class="nav-link align-middle">
-                            <img src="../img/search.svg" alt="search"><span class="ms-3 d-none d-md-inline text-decoration-none text-white">Créer un match</span>
+                            <img src="../img/calendar-add.svg" alt="addCal"><span class="ms-3 d-none d-md-inline text-decoration-none text-white">Créer un match</span>
                         </a>
                     </div>
-                    <div class="nav-item btn btn-darkYellow w-100 shadow">
+                    <div class="nav-item btn btn-darkYellow shadow">
                         <a href="notifsOrga.html" class="nav-link align-middle">
-                            <img src="../img/calendar.svg" alt="calendar"><span class="ms-3 d-none d-md-inline text-decoration-none text-white">Mes inscriptions</span>
+                            <img src="../img/calendar-2.svg" alt="viewNotif"><span class="ms-3 d-none d-md-inline text-decoration-none text-white">Mes inscriptions</span>
                         </a>
                     </div>
-                    <div class="nav-item btn btn-clearYellow w-100 shadow shadow-inset">
+                    <div class="nav-item btn btn-clearYellow shadow shadow-inset">
                         <a href="statOrga.html" class="nav-link align-middle">
-                            <img src="../img/calendar.svg" alt="calendar"><span class="ms-3 d-none d-md-inline text-decoration-none text-white">Mes statistiques</span>
+                            <img src="../img/calendar-edit.svg" alt="editStat"><span class="ms-3 d-none d-md-inline text-decoration-none text-white">Mes statistiques</span>
                         </a>
                     </div>
                 </div>
@@ -87,6 +91,11 @@
                 <span class="col-12 col-md-6 col-sm-12 col-lg-4 my-lg-1">Nombre de joueur inscrit : 12</span>
                 <span class="col-12 col-md-6 col-sm-12 col-lg-4 my-lg-1">A : 9h40</span>
             </a>
+            <a class="btn btn-clearBlue text-white shadow m-3 rounded-3" href="statForm.html">
+                <img src="../img/calendar-edit.svg" alt="logo">
+                <span>Entrer les statistiques</span>
+            </a>
+
             <a href="#" class="row g-3 align-items-center bg-darkYellow mt-3 rounded shadow shadow-inset py-3 justify-content-between text-white text-decoration-none">
                 <h4 class="col-12 col-md-6 col-sm-12 col-lg-4 my-lg-1 fw-bold">Caen</h4>
                 <span class="col-12 col-md-6 col-sm-12 col-lg-4 my-lg-1">Nombre de jouer maximum : 8</span>
@@ -98,6 +107,11 @@
                 <span class="col-12 col-md-6 col-sm-12 col-lg-4 my-lg-1">Nombre de joueur inscrit : 12</span>
                 <span class="col-12 col-md-6 col-sm-12 col-lg-4 my-lg-1">A : 22h30</span>
             </a>
+            <a class="btn btn-clearBlue text-white shadow m-3 rounded-3" href="statForm.html">
+                <img src="../img/calendar-edit.svg" alt="logo">
+                <span>Entrer les statistiques</span>
+            </a>
+
             <a href="#" class="row g-3 align-items-center bg-clearYellow mt-3 rounded shadow shadow-inset py-3 justify-content-between text-white text-decoration-none">
                 <h4 class="col-12 col-md-6 col-sm-12 col-lg-4 my-lg-1 fw-bold">Paris</h4>
                 <span class="col-12 col-md-6 col-sm-12 col-lg-4 my-lg-1">Nombre de jouer maximum : 2</span>
@@ -109,6 +123,11 @@
                 <span class="col-12 col-md-6 col-sm-12 col-lg-4 my-lg-1">Nombre de joueur inscrit : 12</span>
                 <span class="col-12 col-md-6 col-sm-12 col-lg-4 my-lg-1">A : 12h30</span>
             </a>
+            <a class="btn btn-clearBlue text-white shadow m-3 rounded-3" href="statForm.html">
+                <img src="../img/calendar-edit.svg" alt="logo">
+                <span>Entrer les statistiques</span>
+            </a>
+
             <a href="#" class="row g-3 align-items-center bg-darkYellow mt-3 rounded shadow shadow-inset py-3 justify-content-between text-white text-decoration-none">
                 <h4 class="col-12 col-md-6 col-sm-12 col-lg-4 my-lg-1 fw-bold">Mont-Cul</h4>
                 <span class="col-12 col-md-6 col-sm-12 col-lg-4 my-lg-1">Nombre de jouer maximum : 6</span>
@@ -119,6 +138,10 @@
                 </div>
                 <span class="col-12 col-md-6 col-sm-12 col-lg-4 my-lg-1">Nombre de joueur inscrit : 4</span>
                 <span class="col-12 col-md-6 col-sm-12 col-lg-4 my-lg-1">A : 10h15</span>
+            </a>
+            <a class="btn btn-clearBlue text-white shadow m-3 rounded-3" href="statForm.html">
+                <img src="../img/calendar-edit.svg" alt="logo">
+                <span>Entrer les statistiques</span>
             </a>
         </div>
     </div>
