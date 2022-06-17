@@ -86,7 +86,7 @@ function dbSearchMatch($db, $city, $sport, $period, $complete)
         if ($complete == true) {
             $request .= "AND m.max_player_nb = count(p.id_player)";
         } else {
-            $request "AND m.max_player_nb > count(p.id_player)";
+            $request .= "AND m.max_player_nb > count(p.id_player)";
         }
         $date = date('Y-m-d');
         $date = date_add($date, date_interval_create_from_date_string($period." days"));
@@ -109,6 +109,25 @@ function dbSearchMatch($db, $city, $sport, $period, $complete)
 
 function dbFutureMatch($db, $id_person){
     try {
-        $request = "SELECT "
+        $request = "SELECT c.city, s.sport, m.date_time, m.max_player_nb, count(p.id_player)
+                    FROM match m 
+                    INNER JOIN city c USING(id_city)
+                    INNER JOIN sport s USING(id_sport)
+                    INNER JOIN player_match p USING(id_match)
+                    WHERE c.name=:nameCity
+                    AND m.date_time<:datePeriod
+                    AND m.date_time>:dateToday
+                    AND s.name=:nameSport 
+                    AND p.accept=true";
+        $dateToday = date('Y-m-d');
+
+        if ($dateToday <= $datematch){
+
+        }
     }
+    catch (PDOException $exception) {
+        error_log('Request error: ' . $exception->getMessage());
+        return false;
+    }
+    return $result;
 }
