@@ -78,7 +78,9 @@ function dbSearchMatch($db, $city, $sport, $period, $complete)
                     INNER JOIN city c USING(id_city)
                     INNER JOIN sport s USING(id_sport)
                     INNER JOIN player_match p USING(id_match)
-                    WHERE c.name=:nameCity 
+                    WHERE c.name=:nameCity
+                    AND m.date_time<:datePeriod
+                    AND m.date_time>:dateToday
                     AND s.name=:nameSport 
                     AND p.accept=true";
         if ($complete == true) {
@@ -86,9 +88,15 @@ function dbSearchMatch($db, $city, $sport, $period, $complete)
         } else {
             $request "AND m.max_player_nb > count(p.id_player)";
         }
+        $date = date('Y-m-d');
+        $date = date_add($date, date_interval_create_from_date_string($period." days"));
+        $datePeriod = date_format($date, "Y-m-d");
+        $dateToday = date('Y-m-d');
         $statement = $db->prepare($request);
         $statement->bindParam(':nameCity', $city, PDO::PARAM_STR, 200);
         $statement->bindParam(':nameSport', $sport, PDO::PARAM_STR, 200);
+        $statement->bindParam(':datePeriod', $datePeriod, PDO::PARAM_STR, 200);
+        $statement->bindParam(':dateToday', $dateToday, PDO::PARAM_STR, 200);
         $statement->execute();
         $result = $statement->fetchAll(PDO::FETCH_ASSOC);
     }
@@ -97,4 +105,10 @@ function dbSearchMatch($db, $city, $sport, $period, $complete)
         return false;
     }
     return $result;
+}
+
+function dbFutureMatch($db, $id_person){
+    try {
+        $request = "SELECT "
+    }
 }
