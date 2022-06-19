@@ -107,15 +107,27 @@
 
     <div class="p-3 mb-3 rounded-3 bg-clearGrey border-0 d-flex flex-nowrap align-items-center">
         <img src="../img/LogoBisStrong.svg" alt="logo">
-        <span class="px-2">Notez l'application</span>
-        <div>
-            <img src="../img/filledStar.svg" alt="logo">
-            <img src="../img/filledStar.svg" alt="logo">
-            <img src="../img/filledStar.svg" alt="logo">
-            <img src="../img/filledStar.svg" alt="logo">
-            <img src="../img/star.svg" alt="logo">
+        <span class="px-2 flex-grow-1">Notez l'application</span>
+        <div class="d-flex flex-fill justify-content-between">
+            <div id="star1" onmouseup="getStarRate(id)" onmouseenter="starFill(id)" onmouseleave="starUnfill(id)">
+                <img src="../img/star.svg" alt="logo">
+            </div>
+            <div id="star2" onmouseup="getStarRate(id)" onmouseenter="starFill(id)" onmouseleave="starUnfill(id)">
+                <img src="../img/star.svg" alt="logo">
+            </div>
+            <div id="star3" onmouseup="getStarRate(id)" onmouseenter="starFill(id)" onmouseleave="starUnfill(id)">
+                <img src="../img/star.svg" alt="logo">
+            </div>
+            <div id="star4" onmouseup="getStarRate(id)" onmouseenter="starFill(id)" onmouseleave="starUnfill(id)">
+                <img src="../img/star.svg" alt="logo">
+            </div>
+            <div id="star5" onmouseup="getStarRate(id)" onmouseenter="starFill(id)" onmouseleave="starUnfill(id)">
+                <img src="../img/star.svg" alt="logo">
+            </div>
         </div>
     </div>
+
+
 
     <div class="mb-3 align-items-center">
         <a class="btn btn-darkYellow nav-item text-white shadow rounded-3" href="profil.html">
@@ -155,6 +167,7 @@
 
 <!--FOOTER-->
 
+<script src="../js/ajax.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>
