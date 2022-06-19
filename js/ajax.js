@@ -64,13 +64,13 @@ function starFill(id_star){
     }
 }
 
-function starUnfill(id_star){
-    var star = "<img src=\"../img/star.svg\" alt=\"logo\">";
-    document.getElementById(id_star).innerHTML = star;
-}
-
 function getStarRate(id_star){
+
     var id = id_star;
     var rate = id.slice(id.length - 1);
     console.log(rate);
+}
+
+function validateProfil(){
+
 }
