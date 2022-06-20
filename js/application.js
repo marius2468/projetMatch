@@ -1,8 +1,8 @@
 function starFill(id_star){
-    var filledStar = "<a href=\"javascript:void(0)\" class=\"cursor-pointer disabled\">\n" +
+    var filledStar = "<a href=\"javascript:void(0)\" class=\"cursor-pointer\">\n" +
         "                    <img src=\"../img/icons/filledStar.svg\" alt=\"logo\">\n" +
         "                </a>";
-    var star = "<a href=\"javascript:void(0)\" class=\"cursor-pointer disabled\">\n" +
+    var star = "<a href=\"javascript:void(0)\" class=\"cursor-pointer\">\n" +
         "                    <img src=\"../img/icons/star.svg\" alt=\"logo\">\n" +
         "                </a>";
 
