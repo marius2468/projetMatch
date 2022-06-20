@@ -19,7 +19,3 @@ function getStarRate(id_star){
     var rate = id.slice(id.length - 1);
     console.log(rate);
 }
-
-function validateProfil(){
-
-}

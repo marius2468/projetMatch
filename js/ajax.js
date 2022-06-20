@@ -49,14 +49,23 @@ function httpErrors(errorCode) {
     }
 }
 
-let login = '';
+function userValidation(){
 
-$('#person-add').on('submit', (event) =>
-{
-    event.preventDefault();
-    ajaxRequest('POST', '../php/models/Person.php', () =>
+    let login = '';
+    let avatar = $('#avatarInupt').val();
+    let name = $('#nameInput').val();
+    let firstName = $('#firstNameInput').val();
+    let town = $('#townInput').val();
+    let mail = $('#mailInput').val();
+    let password = $('#passwordInput').val();
+
+    $('#person-add').on('submit', (event) =>
     {
-        ajaxRequest('GET', 'php/request.php/tweets/', displayTweets);
-    }, 'login=' + login + '&text=' + $('#tweet').val());
-    $('#tweet').val('');
-});
+        event.preventDefault();
+        ajaxRequest('POST', '../php/librairies/createPerson.php', () =>
+        {
+            ajaxRequest('GET', 'php/librairies/getPerson.php');
+        }, 'login=' + login + 'avatar=' + avatar + '&name=' + name + '&firsName=' + firstName + '&town=' + town + '&mail=' + mail + '&password=' + password);
+        $('#tweet').val('');
+    });
+}
