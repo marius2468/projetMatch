@@ -1,22 +1,15 @@
-
-function userValidation(){
-
-    let login = '';
-    let avatar = $('#avatarInput').val();
+$('#signUp').on('click', (event) =>
+{
+    let id_photo = $('input[name="avatarInput"]:checked').val();
     let name = $('#nameInput').val();
-    let firstName = $('#firstNameInput').val();
-    let town = $('#townInput').val();
-    let mail = $('#mailInput').val();
+    let first_name = $('#firstNameInput').val();
+    let id_city = $('#townInput').val();
+    let email = $('#mailInput').val();
     let password = $('#passwordInput').val();
+    event.preventDefault();
+    ajaxRequest('POST', '../php/libraries/createPerson.php',displaySuccess,'id_photo=' + id_photo + '&name=' + name + '&first_name=' + first_name + '&id_city=' + id_city + '&email=' + email + '&password=' + password);
+});
 
-    $('#person-add').on('submit', (event) =>
-    {
-        event.preventDefault();
-        ajaxRequest('POST', '../php/librairies/createPerson.php',displaySuccess(),'login=' + login + 'avatar=' + avatar + '&name=' + name + '&firsName=' + firstName + '&town=' + town + '&mail=' + mail + '&password=' + password);
-        $('#tweet').val('');
-    });
-}
-
-function displaySuccess(){
-    console.log("Success");
+function displaySuccess($data){
+    console.log($data);
 }
