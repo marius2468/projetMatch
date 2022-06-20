@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'PUT'){
     $db = new Database();
     $dataBase = $db->getConnection();
     $data = json_decode(file_get_contents("php://input"));
-    if (!empty($data->id_person) && !empty($data->password) && !empty($data->id_photo)) {
+    if (!empty($data->id_person) && !empty($data->password) && !empty($data->id_photo) && !empty($data->id_city) && !empty($data->age) && !empty($data->id_physical_form)) {
         $person = new Person($dataBase);
         $person->password = $data->password;
         $person->id_photo = $data->id_photo;
