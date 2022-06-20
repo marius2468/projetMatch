@@ -1,6 +1,10 @@
 function starFill(id_star){
-    var filledStar = "<img src=\"../img/icons/filledStar.svg\" alt=\"logo\">";
-    var star = "<img src=\"../img/icons/star.svg\" alt=\"logo\">";
+    var filledStar = "<a href=\"javascript:void(0)\" class=\"cursor-pointer disabled\">\n" +
+        "                    <img src=\"../img/icons/filledStar.svg\" alt=\"logo\">\n" +
+        "                </a>";
+    var star = "<a href=\"javascript:void(0)\" class=\"cursor-pointer disabled\">\n" +
+        "                    <img src=\"../img/icons/star.svg\" alt=\"logo\">\n" +
+        "                </a>";
 
     for (let i = 1; i <= 5; i++) {
         if (i <= (id_star.slice(id_star.length - 1))){
@@ -14,7 +18,6 @@ function starFill(id_star){
 }
 
 function getStarRate(id_star){
-
     var id = id_star;
     var rate = id.slice(id.length - 1);
     console.log(rate);
