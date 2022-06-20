@@ -18,7 +18,7 @@
             if (width > 991) {
                 link1.className = 'nav-item btn btn-clearYellow align-self-center shadow shadow-inset text-white';
                 link2.className  = 'nav-item btn btn-darkYellow align-self-center shadow text-white';
-                link3.innerHTML = '<img src="../img/profile.svg" alt="profile" height="50">';
+                link3.innerHTML = '<img src="../img/icons/profile.svg" alt="profile" height="50">';
             }
             else {
                 link1.className = 'nav-item text-decoration-none text-white';
@@ -36,9 +36,9 @@
 
 <nav class="navbar sticky-top navbar-fixed-top navbar-expand-lg bg-clearBlue p-md-3">
     <div class="container">
-        <a class="navbar-brand" href="searchMatch.html"><img src="../img/logo.svg" alt="logo" height="50" id="logo"></a>
+        <a class="navbar-brand" href="searchMatch.html"><img src="../img/icons/logo.svg" alt="logo" height="50" id="logo"></a>
         <a class="btn bg-darkYellow navbar-toggler border-0 pb-2 shadow" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <img src="../img/burger.svg" alt="burger">
+            <img src="../img/icons/burger.svg" alt="burger">
         </a>
         <div class="collapse navbar-collapse" id="navbarNav">
             <div class="mx-auto"></div>
@@ -46,7 +46,7 @@
                 <a class="nav-item btn btn-clearYellow align-self-center shadow shadow-inset text-white" href="searchMatch.html" id="nav-button1">Joueur</a>
                 <a class="nav-item btn btn-darkYellow align-self-center shadow text-white" href="notifsOrga.html" id="nav-button2">Organisateur</a>
                 <a class="nav-item" href="profil.html" id="nav-button3">
-                    <img src="../img/profile.svg" alt="profile" height="50">
+                    <img src="../img/icons/profile.svg" alt="profile" height="50">
                 </a>
             </div>
         </div>
@@ -57,82 +57,66 @@
 
 <div class="position-relative justify-content-center start-25 w-50 row">
 
-    <h1 class="form-label d-flex justify-content-center p-3">Inscription</h1>
-
-    <div class="d-flex align-items-end mb-3">
-        <img src="../img/profilAdd.svg" alt="logo" height="100">
-        <div class="mb-3">
-            <input class="form-control justify-content-center" type="file" id="formFile">
-        </div>
-    </div>
+    <img class="form-label d-flex justify-content-center p-3" src="../img/icons/profileBlue.svg" alt="logo" height="150">
 
     <div class="p-3 mb-3 rounded-3 bg-clearGrey border-0">
         <span>Nom Prénom</span>
     </div>
 
-    <label class="form-label d-flex">Ville</label>
-    <div class="form-floating mb-3">
-        <input type="text" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="townInput" placeholder="ville">
-        <label class="ps-4 text-darkGrey" for="townInput">Entrez votre ville</label>
+    <div class="p-3 mb-3 rounded-3 border border-clearGrey border-3 align-items-center">
+        <img src="../img/icons/map.svg" alt="logo">
+        <span class="px-2 text-clearGrey">Ville :</span>
+        <span >ville</span>
     </div>
 
-    <label class="form-label d-flex">Âge</label>
-    <div class="form-floating mb-3">
-        <input type="text" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="ageInput" placeholder="age">
-        <label class="ps-4 text-darkGrey" for="ageInput">Entrez votre âge</label>
+    <div class="p-3 mb-3 rounded-3 border border-clearGrey border-3 align-items-center">
+        <img src="../img/icons/user.svg" alt="logo">
+        <span class="px-2 text-clearGrey">Âge :</span>
+        <span >XX</span>
     </div>
 
-    <label class="form-label d-flex">Mot de passe</label>
-    <div class="form-floating mb-2">
-        <input type="password" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="passwordInput" placeholder="mot de  passe">
-        <label class="ps-4 text-darkGrey" for="passwordInput">Entrez un mot de passe</label>
-    </div>
-    <div class="form-floating mb-3">
-        <input type="password" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="passwordInput2" placeholder="mot de passe">
-        <label class="ps-4 text-darkGrey" for="passwordInput2">Confirmation du mot de passe</label>
+    <div class="p-3 mb-3 rounded-3 border border-clearGrey border-3 align-items-center">
+        <img src="../img/icons/security-safe.svg" alt="logo">
+        <span class="px-2 text-clearGrey">Mot de passe :</span>
+        <span >•••••••••••••••</span>
     </div>
 
-    <label class="form-label d-flex mb-3">Sélectionnez votre forme sportive</label>
-
-    <div class="form-floating mb-3">
-        <label class="visually-hidden" for="inlineFormSelect">Preference</label>
-        <select class="form-select rounded-3 bg-clearGrey shadow shadow-inset" id="inlineFormSelect">
-            <option selected>...</option>
-            <option value="1">Professionnel</option>
-            <option value="2">Confirmé</option>
-            <option value="3">Amateur</option>
-            <option value="4">Débutant</option>
-        </select>
+    <div class="p-3 mb-3 rounded-3 border border-clearGrey border-3 align-items-center">
+        <img src="../img/icons/user.svg" alt="logo">
+        <span class="px-2 text-clearGrey">Forme sportive :</span>
+        <span >...</span>
     </div>
 
     <div class="p-3 mb-3 rounded-3 bg-clearGrey border-0 d-flex flex-nowrap align-items-center">
-        <img src="../img/LogoBisStrong.svg" alt="logo">
-        <span class="px-2 flex-grow-1">Notez l'application</span>
-        <div class="d-flex flex-fill justify-content-between">
-            <div id="star1" onmouseup="getStarRate(id)" onmouseenter="starFill(id)">
-                <img src="../img/star.svg" alt="logo">
-            </div>
-            <div id="star2" onmouseup="getStarRate(id)" onmouseenter="starFill(id)">
-                <img src="../img/star.svg" alt="logo">
-            </div>
-            <div id="star3" onmouseup="getStarRate(id)" onmouseenter="starFill(id)">
-                <img src="../img/star.svg" alt="logo">
-            </div>
-            <div id="star4" onmouseup="getStarRate(id)" onmouseenter="starFill(id)">
-                <img src="../img/star.svg" alt="logo">
-            </div>
-            <div id="star5" onmouseup="getStarRate(id)" onmouseenter="starFill(id)">
-                <img src="../img/star.svg" alt="logo">
-            </div>
+        <img src="../img/icons/LogoBisStrong.svg" alt="logo">
+        <span class="px-2">Notez l'application</span>
+        <div>
+            <img src="../img/icons/filledStar.svg" alt="logo">
+            <img src="../img/icons/filledStar.svg" alt="logo">
+            <img src="../img/icons/filledStar.svg" alt="logo">
+            <img src="../img/icons/filledStar.svg" alt="logo">
+            <img src="../img/icons/star.svg" alt="logo">
         </div>
     </div>
 
+    <label class="form-label d-flex mb-3">Mes statistiques</label>
 
+    <div class="p-3 mb-3 rounded-3 bg-clearGrey border-0 align-items-center">
+        <img src="../img/icons/badge.svg" alt="logo">
+        <span>23 matchs joués</span>
+    </div>
+
+    <div class="align-items-center">
+        <a class="btn btn-clearYellow nav-item text-white shadow mb-3 rounded-3" href="">
+            <img src="../img/icons/edit.svg" alt="logo">
+            <span>Modifier</span>
+        </a>
+    </div>
 
     <div class="mb-3 align-items-center">
-        <a class="btn btn-darkYellow nav-item text-white shadow rounded-3" href="profil.html">
-            <img src="../img/tick-square.svg" alt="logo">
-            <span>Valider</span>
+        <a class="btn btn-darkYellow nav-item text-white shadow rounded-3" href="connection.html">
+            <img src="../img/icons/logout.svg" alt="logo">
+            <span>Se déconnecter</span>
         </a>
     </div>
 </div>
@@ -143,7 +127,7 @@
     <div class="container p-4">
         <div class="row">
             <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-                <img src="../img/logo.svg" alt="logo" height="50">
+                <img src="../img/icons/logo.svg" alt="logo" height="50">
                 <p>
                     Bienvenue sur notre site ChronoMatch où vous pouvez réserver ou créer des matchs à tout instant.
                 </p>
@@ -167,7 +151,6 @@
 
 <!--FOOTER-->
 
-<script src="../js/ajax.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>
