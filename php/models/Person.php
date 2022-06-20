@@ -88,7 +88,8 @@ class Person {
                 $request = "SELECT p.first_name, p.name, m.count, pe.id_person 
                             FROM person p 
                             INNER JOIN (SELECT id_person, count(id_person) as count 
-                            FROM player_match GROUP BY id_person) m USING (id_person) 
+                                        FROM player_match GROUP BY id_person) m 
+                            USING (id_person) 
                             INNER JOIN player_match pe USING(id_person) WHERE pe.id_match=:id_match AND pe.accept=true;";
                 $statement = $this->connection->prepare($request);
                 $statement->bindParam(':id_match', $id_match, PDO::PARAM_INT);
