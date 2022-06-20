@@ -42,4 +42,31 @@ class Match {
         }
         return true;
     }
+
+    public function getMatchs($period, $id_sport, $id_city, $complete){
+        try {
+            $dateFuture = date('Y-m-d', strtotime($period));
+            $dateToday = date('Y-m-d');
+            $request = "SELECT c.name as name_city, s.name as name_sport, s.nb_max, m.date_time FROM match m
+                        INNER JOIN city c USING(id_city)
+                        INNER JOIN sport s USING(id_sport)
+                        WHERE m.date_time<:dateFuture
+                        AND m.date_time>:dateToday
+                        AND c.id_city=:id_city
+                        AND s.id_sport=:id_sport;";
+            $statement = $this->connection->prepare($request);
+            $statement->bindParam(':dateFuture', $dateFuture, PDO::PARAM_STR, 200);
+            $statement->bindParam(':dateToday', $dateToday, PDO::PARAM_STR, 200);
+            $statement->bindParam(':id_city', $id_city, PDO::PARAM_INT);
+            $statement->bindParam(':id_sport', $id_sport, PDO::PARAM_INT);
+            $statement->execute();
+            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+        }
+        catch (PDOException $exception){
+            error_log('Request error: '.$exception->getMessage());
+            return false;
+        }
+        return $result;
+    }
 }

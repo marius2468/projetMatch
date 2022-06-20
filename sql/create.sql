@@ -76,7 +76,7 @@ CREATE TABLE public.person(
 CREATE TABLE public.match(
 	id_match        SERIAL NOT NULL ,
 	address         VARCHAR (200) NOT NULL ,
-	date_time       DATE  NOT NULL ,
+	date_time       timestamp  NOT NULL ,
 	price           INT NOT NULL ,
 	score           VARCHAR (50)  ,
 	id_person       INT  NOT NULL ,
