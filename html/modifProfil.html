@@ -57,66 +57,82 @@
 
 <div class="position-relative justify-content-center start-25 w-50 row">
 
-    <img class="form-label d-flex justify-content-center p-3" src="../img/icons/profileBlue.svg" alt="logo" height="150">
+    <h1 class="form-label d-flex justify-content-center p-3">Inscription</h1>
+
+    <div class="d-flex align-items-end mb-3">
+        <img src="../img/icons/profilAdd.svg" alt="logo" height="100">
+        <div class="mb-3">
+            <input class="form-control justify-content-center" type="file" id="formFile">
+        </div>
+    </div>
 
     <div class="p-3 mb-3 rounded-3 bg-clearGrey border-0">
         <span>Nom Prénom</span>
     </div>
 
-    <div class="p-3 mb-3 rounded-3 border border-clearGrey border-3 align-items-center">
-        <img src="../img/icons/map.svg" alt="logo">
-        <span class="px-2 text-clearGrey">Ville :</span>
-        <span >ville</span>
+    <label class="form-label d-flex">Ville</label>
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="townInput" placeholder="ville">
+        <label class="ps-4 text-darkGrey" for="townInput">Entrez votre ville</label>
     </div>
 
-    <div class="p-3 mb-3 rounded-3 border border-clearGrey border-3 align-items-center">
-        <img src="../img/icons/user.svg" alt="logo">
-        <span class="px-2 text-clearGrey">Âge :</span>
-        <span >XX</span>
+    <label class="form-label d-flex">Âge</label>
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="ageInput" placeholder="age">
+        <label class="ps-4 text-darkGrey" for="ageInput">Entrez votre âge</label>
     </div>
 
-    <div class="p-3 mb-3 rounded-3 border border-clearGrey border-3 align-items-center">
-        <img src="../img/icons/security-safe.svg" alt="logo">
-        <span class="px-2 text-clearGrey">Mot de passe :</span>
-        <span >•••••••••••••••</span>
+    <label class="form-label d-flex">Mot de passe</label>
+    <div class="form-floating mb-2">
+        <input type="password" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="passwordInput" placeholder="mot de  passe">
+        <label class="ps-4 text-darkGrey" for="passwordInput">Entrez un mot de passe</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="password" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="passwordInput2" placeholder="mot de passe">
+        <label class="ps-4 text-darkGrey" for="passwordInput2">Confirmation du mot de passe</label>
     </div>
 
-    <div class="p-3 mb-3 rounded-3 border border-clearGrey border-3 align-items-center">
-        <img src="../img/icons/user.svg" alt="logo">
-        <span class="px-2 text-clearGrey">Forme sportive :</span>
-        <span >...</span>
+    <label class="form-label d-flex mb-3">Sélectionnez votre forme sportive</label>
+
+    <div class="form-floating mb-3">
+        <label class="visually-hidden" for="inlineFormSelect">Preference</label>
+        <select class="form-select rounded-3 bg-clearGrey shadow shadow-inset" id="inlineFormSelect">
+            <option selected>...</option>
+            <option value="1">Professionnel</option>
+            <option value="2">Confirmé</option>
+            <option value="3">Amateur</option>
+            <option value="4">Débutant</option>
+        </select>
     </div>
 
     <div class="p-3 mb-3 rounded-3 bg-clearGrey border-0 d-flex flex-nowrap align-items-center">
         <img src="../img/icons/LogoBisStrong.svg" alt="logo">
-        <span class="px-2">Notez l'application</span>
-        <div>
-            <img src="../img/icons/filledStar.svg" alt="logo">
-            <img src="../img/icons/filledStar.svg" alt="logo">
-            <img src="../img/icons/filledStar.svg" alt="logo">
-            <img src="../img/icons/filledStar.svg" alt="logo">
-            <img src="../img/icons/star.svg" alt="logo">
+        <span class="px-2 flex-grow-1">Notez l'application</span>
+        <div class="d-flex flex-fill justify-content-between">
+            <div id="star1" onmouseup="getStarRate(id)" onmouseenter="starFill(id)">
+                <img src="../img/icons/star.svg" alt="logo">
+            </div>
+            <div id="star2" onmouseup="getStarRate(id)" onmouseenter="starFill(id)">
+                <img src="../img/icons/star.svg" alt="logo">
+            </div>
+            <div id="star3" onmouseup="getStarRate(id)" onmouseenter="starFill(id)">
+                <img src="../img/icons/star.svg" alt="logo">
+            </div>
+            <div id="star4" onmouseup="getStarRate(id)" onmouseenter="starFill(id)">
+                <img src="../img/icons/star.svg" alt="logo">
+            </div>
+            <div id="star5" onmouseup="getStarRate(id)" onmouseenter="starFill(id)">
+                <img src="../img/icons/star.svg" alt="logo">
+            </div>
         </div>
     </div>
 
-    <label class="form-label d-flex mb-3">Mes statistiques</label>
 
-    <div class="p-3 mb-3 rounded-3 bg-clearGrey border-0 align-items-center">
-        <img src="../img/icons/badge.svg" alt="logo">
-        <span>23 matchs joués</span>
-    </div>
-
-    <div class="align-items-center">
-        <a class="btn btn-clearYellow nav-item text-white shadow mb-3 rounded-3" href="">
-            <img src="../img/icons/edit.svg" alt="logo">
-            <span>Modifier</span>
-        </a>
-    </div>
 
     <div class="mb-3 align-items-center">
-        <a class="btn btn-darkYellow nav-item text-white shadow rounded-3" href="connection.html">
-            <img src="../img/icons/logout.svg" alt="logo">
-            <span>Se déconnecter</span>
+        <a class="btn btn-darkYellow nav-item text-white shadow rounded-3" href="profil.html">
+            <img src="../img/icons/tick-square.svg" alt="logo">
+            <span>Valider</span>
         </a>
     </div>
 </div>
@@ -151,6 +167,7 @@
 
 <!--FOOTER-->
 
+<script src="../js/application.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>

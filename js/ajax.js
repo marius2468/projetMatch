@@ -48,3 +48,15 @@ function httpErrors(errorCode) {
         $('#errors').show();
     }
 }
+
+let login = '';
+
+$('#person-add').on('submit', (event) =>
+{
+    event.preventDefault();
+    ajaxRequest('POST', '../php/models/Person.php', () =>
+    {
+        ajaxRequest('GET', 'php/request.php/tweets/', displayTweets);
+    }, 'login=' + login + '&text=' + $('#tweet').val());
+    $('#tweet').val('');
+});

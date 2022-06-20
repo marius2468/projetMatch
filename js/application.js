@@ -1,6 +1,6 @@
 function starFill(id_star){
-    var filledStar = "<img src=\"../img/filledStar.svg\" alt=\"logo\">";
-    var star = "<img src=\"../img/star.svg\" alt=\"logo\">";
+    var filledStar = "<img src=\"../img/icons/filledStar.svg\" alt=\"logo\">";
+    var star = "<img src=\"../img/icons/star.svg\" alt=\"logo\">";
 
     for (let i = 1; i <= 5; i++) {
         if (i <= (id_star.slice(id_star.length - 1))){
