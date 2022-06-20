@@ -105,10 +105,10 @@ class Person {
 
     public function updatePerson($id_person){
         $this->password = password_hash(htmlspecialchars(strip_tags($this->password)), PASSWORD_DEFAULT);
-        $this->age = htmlspecialchars(strip_tags($this->email));;
+        $this->age = htmlspecialchars(strip_tags($this->age));;
         $this->id_photo = htmlspecialchars(strip_tags($this->id_photo));
         $this->id_city = htmlspecialchars(strip_tags($this->id_city));
-        $this->id_physical_form = htmlspecialchars(strip_tags($this->email));;
+        $this->id_physical_form = htmlspecialchars(strip_tags($this->id_physical_form));;
         if ($id_person != null){
             try {
                 $request = "UPDATE person SET password=:password, age=:age, id_photo=:id_photo, id_city=:id_city, id_physical_form=:id_physical_form WHERE id_person=:id_person;";
