@@ -10,7 +10,7 @@
 CREATE TABLE public.city(
 	id_city    SERIAL NOT NULL ,
 	name       VARCHAR (200) NOT NULL ,
-	zipcode   INT  NOT NULL  ,
+	zip_code   INT  NOT NULL  ,
 	CONSTRAINT city_PK PRIMARY KEY (id_city)
 )WITHOUT OIDS;
 
@@ -30,11 +30,12 @@ CREATE TABLE public.photo(
 ------------------------------------------------------------
 CREATE TABLE public.sport(
 	id_sport   SERIAL NOT NULL ,
-	name       VARCHAR (200) NOT NULL  ,
-	nb_max     INT NOT NULL ,
-	id_photo   INT NOT NULL ,
+	name       VARCHAR (200) NOT NULL ,
+	nb_max     INT  NOT NULL ,
+	id_photo   INT  NOT NULL  ,
 	CONSTRAINT sport_PK PRIMARY KEY (id_sport)
-    ,CONSTRAINT sport_photo_FK FOREIGN KEY (id_photo) REFERENCES public.photo(id_photo)
+
+	,CONSTRAINT sport_photo_FK FOREIGN KEY (id_photo) REFERENCES public.photo(id_photo)
 )WITHOUT OIDS;
 
 
@@ -59,6 +60,7 @@ CREATE TABLE public.person(
 	password           VARCHAR (1000) NOT NULL ,
 	goal_nb            INT  NOT NULL ,
 	age                INT   ,
+	application_note   INT   ,
 	id_photo           INT  NOT NULL ,
 	id_city            INT  NOT NULL ,
 	id_physical_form   INT    ,
@@ -74,14 +76,15 @@ CREATE TABLE public.person(
 -- Table: match
 ------------------------------------------------------------
 CREATE TABLE public.match(
-	id_match        SERIAL NOT NULL ,
-	address         VARCHAR (200) NOT NULL ,
-	date_time       timestamp  NOT NULL ,
-	price           INT NOT NULL ,
-	score           VARCHAR (50)  ,
-	id_person       INT  NOT NULL ,
-	id_sport        INT  NOT NULL ,
-	id_city         INT  NOT NULL  ,
+	id_match    SERIAL NOT NULL ,
+	address     VARCHAR (200) NOT NULL ,
+	date_time   TIMESTAMP  NOT NULL ,
+	price       INT  NOT NULL ,
+	score       VARCHAR (50)  ,
+	duration    VARCHAR (200) NOT NULL ,
+	id_person   INT  NOT NULL ,
+	id_sport    INT  NOT NULL ,
+	id_city     INT  NOT NULL  ,
 	CONSTRAINT match_PK PRIMARY KEY (id_match)
 
 	,CONSTRAINT match_person_FK FOREIGN KEY (id_person) REFERENCES public.person(id_person)
