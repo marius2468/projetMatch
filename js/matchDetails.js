@@ -22,7 +22,7 @@ function displayMatch(match){
     if (match[0].count == null){
         match[0].count = 0;
     }
-    $('#match').append('<div class="row g-3 align-items-center bg-clearYellow mt-3 rounded shadow py-3 justify-content-between text-white text-decoration-none">\n' +
+    $('#match').append('<div class="row g-3 align-items-center bg-clearYellow mt-3 rounded shadow py-3 justify-content-between text-white text-decoration-none" id="match2">\n' +
         '                   <h4 class="col-12 my-lg-1 fw-bold">' + match[0].address + '</h4>\n' +
         '                   <div class="col-12 col-md-6 col-sm-12 col-lg-4 my-lg-1 align-items-center">\n' +
         '                       <span>' + $_GET('name_sport') + '</span>\n' +
@@ -48,20 +48,27 @@ function displayMatch(match){
 }
 
 function displayParticipants(participants){
-    $('#match').append('<div class="col-11 bg-clearGrey rounded mx-auto shadow-inset shadow">' +
-                        '<h5 class="text-black m-2">Liste des participants</h5>');
-    for (let participant of participants){
-        $('#match').append(
-            '<div class="row bg-clearYellow rounded g-2 my-2 shadow">\n' +
-            '   <div class="col-6 justify-content-between my-auto ps-2">\n' +
-            '       <img src="' + participant.path + '" alt="profile" height="50px">\n' +
-            '       <span>' + participant.first_name + ' ' + participant.name + '</span>\n' +
-            '   </div>\n' +
-            '   <div class="col-6 d-flex my-auto pe-2 justify-content-end">\n' +
+    let element;
+    element = document.createElement('div');
+    element.className = 'col-11 bg-clearGrey rounded mx-auto shadow-inset shadow';
+    element2 = document.createElement('h5')
+    element2.className = 'text-black m-2';
+    element2.innerHTML = 'Liste des participants';
+    element.append(element2);
+    /*$('#match').append('<div class="col-11 bg-clearGrey rounded mx-auto shadow-inset shadow">' +
+                        '<h5 class="text-black m-2">Liste des participants</h5>');*/
+    let element3;
+    for (let participant of participants) {
+        element3 = document.createElement('div');
+        element3.className = 'row bg-clearYellow rounded g-2 my-2 shadow';
+        element3.innerHTML = '<div class="col-6 justify-content-between my-auto ps-2">\n' +
+            '<img src="' + participant.path + '" alt="profile" height="50px">\n' +
+            '<span>' + participant.first_name + ' ' + participant.name + '</span>\n' +
+            '</div>\n' +
+            '<div class="col-6 d-flex my-auto pe-2 justify-content-end">\n' +
             '       ' + participant.count + ' matchs joués\n' +
-            '   </div>\n' +
-            '</div>'
-        );
+            '</div>\n';
+        element.append(element3);
     }
-    $('#match').append('</div>');
+    document.getElementById('match2').append(element);
 }

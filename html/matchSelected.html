@@ -7,28 +7,7 @@
     <link rel="stylesheet" href="../css/bootstrap.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script type="text/javascript">
-        function nav(){
-            let link1 = document.getElementById('nav-button1');
-            let link2 = document.getElementById('nav-button2');
-            let link3 = document.getElementById('nav-button3');
-
-            let width = window.innerWidth;
-            console.log('Test');
-            if (width > 991) {
-                link1.className = 'nav-item btn btn-clearYellow align-self-center shadow shadow-inset text-white';
-                link2.className  = 'nav-item btn btn-darkYellow align-self-center shadow text-white';
-                link3.innerHTML = '<img src="../img/icons/profile.svg" alt="profile" height="50">';
-            }
-            else {
-                link1.className = 'nav-item text-decoration-none text-white';
-                link2.className = 'nav-item text-decoration-none text-white';
-                link3.className = 'text-decoration-none text-white';
-                link3.innerHTML = 'Profile';
-            }
-        }
-        window.addEventListener('resize', nav);
-    </script>
+    <script src="../js/nav.js"></script>
     <script src="../js/ajax.js"></script>
     <script src="../js/matchDetails.js"></script>
 </head>
