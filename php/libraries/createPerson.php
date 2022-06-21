@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     require_once("../models/Person.php");
     $db = new Database();
     $dataBase = $db->getConnection();
-    $data = json_decode(file_get_contents("php://input"));
+    parse_str(file_get_contents("php://input"), $data);
     if (!empty($data->first_name) && !empty($data->name) && !empty($data->email) && !empty($data->password) && !empty($data->id_photo) && !empty($data->id_city)){
         $person = new Person($dataBase);
         $person->first_name = $data->first_name;

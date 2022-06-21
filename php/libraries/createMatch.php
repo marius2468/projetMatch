@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     require_once("../models/Match.php");
     $db = new Database();
     $dataBase = $db->getConnection();
-    $data = json_decode(file_get_contents("php://input"));
+    parse_str(file_get_contents("php://input"), $data);
     if (!empty($data->address) && !empty($data->date_time) && !empty($data->price) && !empty($data->id_person) && !empty($data->id_sport) && !empty($data->id_city)){
         $match = new Match($dataBase);
         $match->address = $data->address;
