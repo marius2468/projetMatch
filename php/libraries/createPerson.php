@@ -12,14 +12,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $db = new Database();
     $dataBase = $db->getConnection();
     parse_str(file_get_contents("php://input"), $data);
-    if (!empty($data->first_name) && !empty($data->name) && !empty($data->email) && !empty($data->password) && !empty($data->id_photo) && !empty($data->id_city)){
+    if (!empty($data['first_name']) && !empty($data['name']) && !empty($data['email']) && !empty($data['password']) && !empty($data['id_photo']) && !empty($data['id_city'])){
         $person = new Person($dataBase);
-        $person->first_name = $data->first_name;
-        $person->name = $data->name;
-        $person->email = $data->email;
-        $person->password = $data->password;
-        $person->id_photo = $data->id_photo;
-        $person->id_city = $data->id_city;
+        $person->first_name = $data['first_name'];
+        $person->name = $data['name'];
+        $person->email = $data['email'];
+        $person->password = $data['password'];
+        $person->id_photo = $data['id_photo'];
+        $person->id_city = $data['id_city'];
         if ($person->verifyPerson()){
             if ($person->createPerson()){
                 http_response_code(201);
