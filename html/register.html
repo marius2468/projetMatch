@@ -14,7 +14,6 @@
             let link3 = document.getElementById('nav-button3');
 
             let width = window.innerWidth;
-            console.log('Test');
             if (width > 991) {
                 link1.className = 'nav-item btn btn-clearYellow align-self-center shadow shadow-inset text-white';
                 link2.className  = 'nav-item btn btn-darkYellow align-self-center shadow text-white';
@@ -40,13 +39,12 @@
     </div>
 </nav>
 
-<form data-toggle="validator" role="form">
+<form data-toggle="validator" role="form" id="signUpForm">
     <div class="position-relative justify-content-center start-25 w-50 row">
 
+        <h1 class="form-label d-flex justify-content-center p-3">Inscription</h1>
 
-            <h1 class="form-label d-flex justify-content-center p-3">Inscription</h1>
-
-            <div class="d-flex flex-column justify-content-center flex-fill align-items-center mb-3">
+        <div class="d-flex flex-column justify-content-center flex-fill align-items-center mb-3">
 
             <label class="form-label">Choisissez votre avatar</label>
             <div class="d-flex mb-3">
@@ -94,70 +92,70 @@
             </div>
         </div>
 
-            <label class="form-label d-flex">Nom*</label>
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="nameInput" placeholder="nom" required>
-                <label class="text-darkGrey ps-4" for="nameInput">Entrez votre nom</label>
-            </div>
+        <label class="form-label d-flex">Nom*</label>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="nameInput" placeholder="nom" required>
+            <label class="text-darkGrey ps-4" for="nameInput">Entrez votre nom</label>
+        </div>
 
 
-            <label class="form-label d-flex">Prénom*</label>
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="firstNameInput" placeholder="prénom" required>
-                <label class="ps-4 text-darkGrey" for="firstNameInput">Entrez votre prénom</label>
-            </div>
+        <label class="form-label d-flex">Prénom*</label>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="firstNameInput" placeholder="prénom" required>
+            <label class="ps-4 text-darkGrey" for="firstNameInput">Entrez votre prénom</label>
+        </div>
 
 
-            <label class="form-label d-flex">Ville</label>
-            <div class="form-floating mb-3">
-                <select class="form-select rounded-3 bg-clearGrey shadow shadow-inset" id="townInput" required>
-                    <option selected>...</option>
-                    <option value="1">Paris</option>
-                    <option value="2">Marseille</option>
-                    <option value="3">Lyon</option>
-                    <option value="4">Toulouse</option>
-                    <option value="5">Nice</option>
-                    <option value="6">Nantes</option>
-                    <option value="7">Montpellier</option>
-                    <option value="8">Strasbourg</option>
-                    <option value="9">Bordeaux</option>
-                    <option value="10">Lille</option>
-                    <option value="11">Rennes</option>
-                    <option value="12">Caen</option>
-                    <option value="13">Toulon</option>
-                    <option value="14">Saint-Etienne</option>
-                    <option value="15">Le Havre</option>
-                    <option value="16">Grenoble</option>
-                    <option value="17">Dijon</option>
-                    <option value="18">Angers</option>
-                    <option value="19">Villeurbanne</option>
-                    <option value="20">Saint-Denis</option>
-                </select>
-            </div>
+        <label class="form-label d-flex">Ville</label>
+        <div class="form-floating mb-3">
+            <select class="form-select rounded-3 bg-clearGrey shadow shadow-inset" id="townInput" required>
+                <option selected value="">...</option>
+                <option value="1">Paris</option>
+                <option value="2">Marseille</option>
+                <option value="3">Lyon</option>
+                <option value="4">Toulouse</option>
+                <option value="5">Nice</option>
+                <option value="6">Nantes</option>
+                <option value="7">Montpellier</option>
+                <option value="8">Strasbourg</option>
+                <option value="9">Bordeaux</option>
+                <option value="10">Lille</option>
+                <option value="11">Rennes</option>
+                <option value="12">Caen</option>
+                <option value="13">Toulon</option>
+                <option value="14">Saint-Etienne</option>
+                <option value="15">Le Havre</option>
+                <option value="16">Grenoble</option>
+                <option value="17">Dijon</option>
+                <option value="18">Angers</option>
+                <option value="19">Villeurbanne</option>
+                <option value="20">Saint-Denis</option>
+            </select>
+        </div>
 
-            <label class="form-label">E-Mail*</label>
-            <div class="form-floating mb-2">
-                <input  type="email" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="mailInput" placeholder="mail" required>
-                <label class="ps-4 text-darkGrey" for="mailInput">Entrez votre e-mail</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="email" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="mailInput2" placeholder="mail" required>
-                <label class="ps-4 text-darkGrey" for="mailInput2">Confirmation de votre e-mail</label>
-            </div>
+        <label class="form-label">E-Mail*</label>
+        <div class="form-floating mb-2">
+            <input  type="email" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="mailInput" placeholder="mail" required>
+            <label class="ps-4 text-darkGrey" for="mailInput">Entrez votre e-mail</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="mailInput2" placeholder="mail" required>
+            <label class="ps-4 text-darkGrey" for="mailInput2">Confirmation de votre e-mail</label>
+        </div>
 
-            <label class="form-label d-flex">Mot de passe*</label>
-            <div class="form-floating mb-2">
-                <input type="password" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="passwordInput" placeholder="mot de  passe" required>
-                <label class="ps-4 text-darkGrey" for="passwordInput">Entrez un mot de passe</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="password" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="passwordInput2" placeholder="mot de passe" required>
-                <label class="ps-4 text-darkGrey" for="passwordInput2">Confirmation du mot de passe</label>
-            </div>
+        <label class="form-label d-flex">Mot de passe*</label>
+        <div class="form-floating mb-2">
+            <input type="password" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="passwordInput" placeholder="mot de  passe" required>
+            <label class="ps-4 text-darkGrey" for="passwordInput">Entrez un mot de passe</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="password" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="passwordInput2" placeholder="mot de passe" required>
+            <label class="ps-4 text-darkGrey" for="passwordInput2">Confirmation du mot de passe</label>
+        </div>
 
-            <label class="form-label">*Champs obligatoires</label>
+        <label class="form-label">*Champs obligatoires</label>
 
-            <button class="btn btn-darkYellow nav-item text-white shadow-lg p-3 mb-5 rounded-3" href="#" id="signUp" type="submit">S'inscrire</button>
+        <button class="btn btn-darkYellow nav-item text-white shadow-lg p-3 mb-5 rounded-3" href="#" id="signUp" type="submit">S'inscrire</button>
     </div>
 </form>
 
@@ -190,27 +188,6 @@
 </footer>
 
 <!--FOOTER-->
-
-<script>
-    // Example starter JavaScript for disabling form submissions if there are invalid fields
-    (function() {
-        'use strict';
-        window.addEventListener('load', function() {
-            // Fetch all the forms we want to apply custom Bootstrap validation styles to
-            var forms = document.getElementsByClassName('needs-validation');
-            // Loop over them and prevent submission
-            var validation = Array.prototype.filter.call(forms, function(form) {
-                form.addEventListener('submit', function(event) {
-                    if (form.checkValidity() === false) {
-                        event.preventDefault();
-                        event.stopPropagation();
-                    }
-                    form.classList.add('was-validated');
-                }, false);
-            });
-        }, false);
-    })();
-</script>
 
 <script src="../js/ajax.js"></script>
 <script src="../js/createPerson.js"></script>
