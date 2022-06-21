@@ -6,7 +6,7 @@ $('#signUp').on('click', (event) =>
     let age = $('#ageInput').val();
     let password = $('#passwordInput').val();
     event.preventDefault();
-    ajaxRequest('PUT', '../php/libraries/createPerson.php',displaySuccess,'id_photo=' + id_photo + '&name=' + name + '&first_name=' + first_name + '&id_city=' + id_city + '&email=' + email + '&password=' + password);
+    ajaxRequest('PUT', '../php/libraries/updatePerson.php',displaySuccess,'id_photo=' + id_photo + '&id_city=' + id_city + '&email=' + email + '&password=' + password);
 });
 
 function displaySuccess(){
