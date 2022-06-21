@@ -29,6 +29,8 @@
         }
         window.addEventListener('resize', nav);
     </script>
+    <script src="../js/ajax.js"></script>
+    <script src="../js/searchMacth.js"></script>
 </head>
 <body>
 
@@ -76,12 +78,34 @@
         <div class="col py-3">
             <form class="row row-cols-lg-auto g-3 align-items-center bg-clearGrey my-1 rounded shadow py-3 justify-content-between">
                 <div class="form-floating col-12 my-lg-1">
-                    <input type="text" class="form-control shadow-sm shadow-inset" id="townInput" placeholder="ville">
-                    <label class="ps-4 text-darkGrey" for="townInput">Ville</label>
+                    <label class="visually-hidden" for="townInput">Ville</label>
+                    <select type="text" class="form-select shadow-sm shadow-inset" id="townInput" required>
+                        <option selected>Choisir Ville...</option>
+                        <option value="1" selected>Paris</option>
+                        <option value="2">Marseille</option>
+                        <option value="3">Lyon</option>
+                        <option value="4">Toulouse</option>
+                        <option value="4">Nice</option>
+                        <option value="5">Nantes</option>
+                        <option value="6">Montpellier</option>
+                        <option value="7">Strasbourg</option>
+                        <option value="8">Bordeaux</option>
+                        <option value="9">Lille</option>
+                        <option value="10">Rennes</option>
+                        <option value="11">Caen</option>
+                        <option value="12">Toulon</option>
+                        <option value="13">Saint-Etienne</option>
+                        <option value="14">/option>
+                        <option value="15">Grenoble</option>
+                        <option value="16">Dijon</option>
+                        <option value="17">Angers</option>
+                        <option value="18">Villeurbann</option>
+                        <option value="19">Saint-Deni</option>
+                    </select>
                 </div>
                 <div class="col-12 my-lg-1">
-                    <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
-                    <select class="form-select shadow-sm shadow-inset" id="inlineFormSelectPref">
+                    <label class="visually-hidden" for="inlineFormSelectPref">Sport</label>
+                    <select class="form-select shadow-sm shadow-inset" id="inlineFormSelectPref" required>
                         <option selected>Choisir Sport...</option>
                         <option value="1">FootBall</option>
                         <option value="2">BasketBall</option>
