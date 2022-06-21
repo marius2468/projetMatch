@@ -30,7 +30,7 @@
         window.addEventListener('resize', nav);
     </script>
     <script src="../js/ajax.js"></script>
-    <script src="../js/searchMacth.js"></script>
+    <script src="../js/searchMatch.js"></script>
 </head>
 <body>
 
@@ -76,12 +76,12 @@
             </div>
         </div>
         <div class="col py-3">
-            <form class="row row-cols-lg-auto g-3 align-items-center bg-clearGrey my-1 rounded shadow py-3 justify-content-between">
-                <div class="form-floating col-12 my-lg-1">
+            <form class="row row-cols-lg-auto g-3 align-items-center bg-clearGrey my-1 rounded shadow py-3 justify-content-between" id="searchForm">
+                <div class="col-12 my-lg-1">
                     <label class="visually-hidden" for="townInput">Ville</label>
-                    <select type="text" class="form-select shadow-sm shadow-inset" id="townInput" required>
-                        <option selected>Choisir Ville...</option>
-                        <option value="1" selected>Paris</option>
+                    <select type="text" class="form-select shadow-sm shadow-inset" id="townInput" required="required">
+                        <option selected value="">Choisir Ville...</option>
+                        <option value="1">Paris</option>
                         <option value="2">Marseille</option>
                         <option value="3">Lyon</option>
                         <option value="4">Toulouse</option>
@@ -104,33 +104,41 @@
                     </select>
                 </div>
                 <div class="col-12 my-lg-1">
-                    <label class="visually-hidden" for="inlineFormSelectPref">Sport</label>
-                    <select class="form-select shadow-sm shadow-inset" id="inlineFormSelectPref" required>
-                        <option selected>Choisir Sport...</option>
-                        <option value="1">FootBall</option>
-                        <option value="2">BasketBall</option>
-                        <option value="3">BaseBall</option>
+                    <label class="visually-hidden" for="sportInput">Sport</label>
+                    <select class="form-select shadow-sm shadow-inset" id="sportInput" required="required">
+                        <option selected value="">Choisir Sport...</option>
+                        <option value="1">Badminton</option>
+                        <option value="2">Tennis</option>
+                        <option value="3">Ping-Pong</option>
+                        <option value="4">Bode Anglaise</option>
+                        <option value="5">FootBall</option>
+                        <option value="6">BasketBall</option>
+                        <option value="7">Rugby</option>
+                        <option value="8">WaterPolo</option>
+                        <option value="9">Cricket</option>
+                        <option value="10">Hockey</option>
+                        <option value="11">BaseBall</option>
                     </select>
                 </div>
                 <div class="col-12 my-lg-1">
-                    <label class="visually-hidden" for="inlineFormSelect">Preference</label>
-                    <select class="form-select shadow-sm shadow-inset" id="inlineFormSelect">
-                        <option selected>Choisir Période...</option>
-                        <option value="1">+7j</option>
-                        <option value="2">+15j</option>
-                        <option value="3">+30</option>
+                    <label class="visually-hidden" for="periodInput">Preference</label>
+                    <select class="form-select shadow-sm shadow-inset" id="periodInput" required="required">
+                        <option selected value="">Choisir Période...</option>
+                        <option value="+7 days">+7j</option>
+                        <option value="+15 days">+15j</option>
+                        <option value="+30 days">+30</option>
                     </select>
                 </div>
                 <div class="col-12 my-lg-1">
                     <div class="form-check">
-                        <input class="form-check-input shadow-inset" type="checkbox" id="inlineFormCheck">
-                        <label class="form-check-label" for="inlineFormCheck">
+                        <input class="form-check-input shadow-inset" type="checkbox" id="completeInput" value="2">
+                        <label class="form-check-label" for="completeInput">
                             Complet
                         </label>
                     </div>
                 </div>
                 <div class="col-12 my-lg-1">
-                    <button type="submit" class="btn btn-clearYellow shadow">
+                    <button type="button" class="btn btn-clearYellow shadow" id="btnSubmit">
                         <img src="../img/icons/search.svg" alt="search"><span class="ms-3 d-none d-sm-inline text-decoration-none text-white">Rechercher</span>
                     </button>
                 </div>

@@ -12,10 +12,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'){
     require_once("../models/Match.php");
     $db = new Database();
     $dataBase = $db->getConnection();
-    $data = json_decode(file_get_contents("php://input"));
-    if (!empty($data->period) && !empty($data->id_sport) && !empty($data->id_city) && !empty($data->complete)) {
+    parse_str(file_get_contents("php://input"), $data);
+    if (!empty($data['period']) && !empty($data['id_sport']) && !empty($data['id_city']) && !empty($data['complete'])) {
         $match = new Match($dataBase);
-        $result = $match->getMatchs($data->period, $data->id_sport, $data->id_city, $data->complete);
+        $result = $match->getMatchs($data['period'], $data['id_sport'], $data['id_city'], $data['complete']);
         if ($result){
             http_response_code(200);
             echo json_encode($result);
