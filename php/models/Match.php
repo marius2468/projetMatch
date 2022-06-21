@@ -156,15 +156,13 @@ class Match {
         if ($passed == 2){
             try {
                 $date_time = date('Y-m-d');
-                $request = "SELECT pm.id_match, m.score, c.name as city_name, s.name as name_sport, s.nb_max, m.date_time, p.path, zz.count
+                $request = "SELECT pm.id_match, m.score, c.name as city_name, s.name as name_sport, m.date_time, p.path, zz.name, zz.first_name
                             FROM player_match pm
                             INNER JOIN match m USING(id_match)
                             INNER JOIN city c USING(id_city)
                             INNER JOIN sport s USING(id_sport)
                             INNER JOIN photo p USING(id_photo)
-                            INNER JOIN (SELECT id_match, count(p.id_person) as count FROM player_match p
-                            WHERE accept=true
-                            GROUP BY id_match) zz USING(id_match)
+                            INNER JOIN (SELECT p.name, p.first_name, pm.id_match FROM person p INNER JOIN player_match pm USING (id_person) WHERE best_player=true) zz USING (id_match)
                             WHERE pm.id_person=:id_person
                             AND m.date_time<:date_time;";
                 $statement = $this->connection->prepare($request);
