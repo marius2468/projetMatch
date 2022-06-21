@@ -1,7 +1,7 @@
 $('#signUpForm').on('submit', (event) =>
 {
     let session;
-    ajaxRequest('GET', '../php/libraries/getPerson.php?' + session,displayProfile);
+    ajaxRequest('GET', '../php/libraries/Person/getPerson.php?' + session,displayProfile);
 
 
     let id_photo = 0;
