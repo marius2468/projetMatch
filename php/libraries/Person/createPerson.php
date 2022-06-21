@@ -7,8 +7,8 @@ header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-    require_once("../config/Database.php");
-    require_once("../models/Person.php");
+    require_once("../../config/Database.php");
+    require_once("../../models/Person.php");
     $db = new Database();
     $dataBase = $db->getConnection();
     parse_str(file_get_contents("php://input"), $data);

@@ -85,22 +85,22 @@
                         <option value="2">Marseille</option>
                         <option value="3">Lyon</option>
                         <option value="4">Toulouse</option>
-                        <option value="4">Nice</option>
-                        <option value="5">Nantes</option>
-                        <option value="6">Montpellier</option>
-                        <option value="7">Strasbourg</option>
-                        <option value="8">Bordeaux</option>
-                        <option value="9">Lille</option>
-                        <option value="10">Rennes</option>
-                        <option value="11">Caen</option>
-                        <option value="12">Toulon</option>
-                        <option value="13">Saint-Etienne</option>
-                        <option value="14">/option>
-                        <option value="15">Grenoble</option>
-                        <option value="16">Dijon</option>
-                        <option value="17">Angers</option>
-                        <option value="18">Villeurbann</option>
-                        <option value="19">Saint-Deni</option>
+                        <option value="5">Nice</option>
+                        <option value="6">Nantes</option>
+                        <option value="7">Montpellier</option>
+                        <option value="8">Strasbourg</option>
+                        <option value="9">Bordeaux</option>
+                        <option value="10">Lille</option>
+                        <option value="11">Rennes</option>
+                        <option value="12">Caen</option>
+                        <option value="13">Toulon</option>
+                        <option value="14">Saint-Etienne</option>
+                        <option value="15">Le Havre</option>
+                        <option value="16">Grenoble</option>
+                        <option value="17">Dijon</option>
+                        <option value="18">Angers</option>
+                        <option value="19">Villeurbanne</option>
+                        <option value="20">Saint-Deni</option>
                     </select>
                 </div>
                 <div class="col-12 my-lg-1">
@@ -110,7 +110,7 @@
                         <option value="1">Badminton</option>
                         <option value="2">Tennis</option>
                         <option value="3">Ping-Pong</option>
-                        <option value="4">Bode Anglaise</option>
+                        <option value="4">Boxe Anglaise</option>
                         <option value="5">FootBall</option>
                         <option value="6">BasketBall</option>
                         <option value="7">Rugby</option>
@@ -124,9 +124,9 @@
                     <label class="visually-hidden" for="periodInput">Preference</label>
                     <select class="form-select shadow-sm shadow-inset" id="periodInput" required="required">
                         <option selected value="">Choisir Période...</option>
-                        <option value="+7 days">+7j</option>
-                        <option value="+15 days">+15j</option>
-                        <option value="+30 days">+30</option>
+                        <option value="+7%20days">+7j</option>
+                        <option value="+15%20days">+15j</option>
+                        <option value="+30%20days">+30j</option>
                     </select>
                 </div>
                 <div class="col-12 my-lg-1">
@@ -138,55 +138,13 @@
                     </div>
                 </div>
                 <div class="col-12 my-lg-1">
-                    <button type="button" class="btn btn-clearYellow shadow" id="btnSubmit">
+                    <button type="button" onclick="searchMatch()" class="btn btn-clearYellow shadow" id="btnSubmit">
                         <img src="../img/icons/search.svg" alt="search"><span class="ms-3 d-none d-sm-inline text-decoration-none text-white">Rechercher</span>
                     </button>
                 </div>
             </form>
-            <a href="matchSelected.html" class="row g-3 align-items-center bg-clearYellow mt-3 rounded shadow shadow-inset py-3 justify-content-between text-white text-decoration-none">
-                <h4 class="col-12 col-md-6 col-sm-12 col-lg-4 my-lg-1 fw-bold">Nantes</h4>
-                <span class="col-12 col-md-6 col-sm-12 col-lg-4 my-lg-1">Nombre de jouer maximum : 22</span>
-                <span class="col-12 col-md-6 col-sm-12 col-lg-4 my-lg-1">Le : 29/09/2022</span>
-                <div class="col-12 col-md-6 col-sm-12 col-lg-4 my-lg-1 align-items-center">
-                    <span>FootBall</span>
-                    <img src="../img/sports/football.svg" alt="football">
-                </div>
-                <span class="col-12 col-md-6 col-sm-12 col-lg-4 my-lg-1">Nombre de joueur inscrit : 12</span>
-                <span class="col-12 col-md-6 col-sm-12 col-lg-4 my-lg-1">A : 9h40</span>
-            </a>
-            <a href="#" class="row g-3 align-items-center bg-darkYellow mt-3 rounded shadow shadow-inset py-3 justify-content-between text-white text-decoration-none">
-                <h4 class="col-12 col-md-6 col-sm-12 col-lg-4 my-lg-1 fw-bold">Caen</h4>
-                <span class="col-12 col-md-6 col-sm-12 col-lg-4 my-lg-1">Nombre de jouer maximum : 8</span>
-                <span class="col-12 col-md-6 col-sm-12 col-lg-4 my-lg-1">Le : 26/07/2022</span>
-                <div class="col-12 col-md-6 col-sm-12 col-lg-4 my-lg-1 align-items-center">
-                    <span>BasketBall</span>
-                    <img src="../img/sports/basketball.svg" alt="basketball">
-                </div>
-                <span class="col-12 col-md-6 col-sm-12 col-lg-4 my-lg-1">Nombre de joueur inscrit : 12</span>
-                <span class="col-12 col-md-6 col-sm-12 col-lg-4 my-lg-1">A : 22h30</span>
-            </a>
-            <a href="#" class="row g-3 align-items-center bg-clearYellow mt-3 rounded shadow shadow-inset py-3 justify-content-between text-white text-decoration-none">
-                <h4 class="col-12 col-md-6 col-sm-12 col-lg-4 my-lg-1 fw-bold">Paris</h4>
-                <span class="col-12 col-md-6 col-sm-12 col-lg-4 my-lg-1">Nombre de jouer maximum : 2</span>
-                <span class="col-12 col-md-6 col-sm-12 col-lg-4 my-lg-1">Le : 14/06/2022</span>
-                <div class="col-12 col-md-6 col-sm-12 col-lg-4 my-lg-1 align-items-center">
-                    <span>Tennis</span>
-                    <img src="../img/sports/tennis.svg" alt="tennis">
-                </div>
-                <span class="col-12 col-md-6 col-sm-12 col-lg-4 my-lg-1">Nombre de joueur inscrit : 12</span>
-                <span class="col-12 col-md-6 col-sm-12 col-lg-4 my-lg-1">A : 12h30</span>
-            </a>
-            <a href="#" class="row g-3 align-items-center bg-darkYellow mt-3 rounded shadow shadow-inset py-3 justify-content-between text-white text-decoration-none">
-                <h4 class="col-12 col-md-6 col-sm-12 col-lg-4 my-lg-1 fw-bold">Bordeaux</h4>
-                <span class="col-12 col-md-6 col-sm-12 col-lg-4 my-lg-1">Nombre de jouer maximum : 6</span>
-                <span class="col-12 col-md-6 col-sm-12 col-lg-4 my-lg-1">Le : 16/07/2022</span>
-                <div class="col-12 col-md-6 col-sm-12 col-lg-4 my-lg-1 align-items-center">
-                    <span>BaseBall</span>
-                    <img src="../img/sports/baseball.svg" alt="baseball">
-                </div>
-                <span class="col-12 col-md-6 col-sm-12 col-lg-4 my-lg-1">Nombre de joueur inscrit : 4</span>
-                <span class="col-12 col-md-6 col-sm-12 col-lg-4 my-lg-1">A : 10h15</span>
-            </a>
+            <div class="alert" role="alert" id="errors"></div>
+            <div id="match"></div>
         </div>
     </div>
 </div>

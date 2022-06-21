@@ -7,7 +7,7 @@ $('#updateForm').on('submit', (event) =>
     let password = $('#passwordInput').val();
     let id_physical_form = $('#formSelect').val();
     event.preventDefault();
-    ajaxRequest('PUT', '../php/libraries/updatePerson.php',displaySuccess,'id_photo=' + id_photo + '&id_city=' + id_city + '&email=' + email + '&password=' + password);
+    ajaxRequest('PUT', '../php/libraries/Person/updatePerson.php',displaySuccess,'id_photo=' + id_photo + '&id_city=' + id_city + '&email=' + email + '&password=' + password);
 });
 
 function displaySuccess(){

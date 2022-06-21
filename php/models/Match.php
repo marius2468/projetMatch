@@ -109,7 +109,7 @@ class Match {
     public function getMatch($id_match){
         try {
             $request = "SELECT m.address || ', ' || c.zip_code || ' ' || c.name || ', France' as address,
-                        ph.path, p.first_name, p.name as person_name, m.price , pm.count, s.nb_max, m.date_time
+                        ph.path, p.first_name, p.name as person_name, m.duration , m.price , pm.count, s.nb_max, m.date_time
                         FROM match m
                         INNER JOIN person p on p.id_person = m.id_person
                         INNER JOIN sport s on s.id_sport = m.id_sport

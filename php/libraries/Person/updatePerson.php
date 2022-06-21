@@ -10,8 +10,8 @@ require_once("../config/Database.php");
 require_once("../models/Person.php");
 
 if ($_SERVER['REQUEST_METHOD'] == 'PUT'){
-    require_once("../config/Database.php");
-    require_once("../models/Person.php");
+    require_once("../../config/Database.php");
+    require_once("../../models/Person.php");
     $db = new Database();
     $dataBase = $db->getConnection();
     $data = json_decode(file_get_contents("php://input"));

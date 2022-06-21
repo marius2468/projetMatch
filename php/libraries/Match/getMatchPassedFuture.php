@@ -8,8 +8,8 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET'){
-    require_once("../config/Database.php");
-    require_once("../models/Match.php");
+    require_once("../../config/Database.php");
+    require_once("../../models/Match.php");
     $db = new Database();
     $dataBase = $db->getConnection();
     $data = json_decode(file_get_contents("php://input"));

@@ -85,8 +85,9 @@ class Person {
         }
         if ($id_match != null){
             try {
-                $request = "SELECT p.first_name, p.name, m.count, pe.id_person 
+                $request = "SELECT p.first_name, p.name, m.count, pe.id_person, po.path 
                             FROM person p 
+                            INNER JOIN photo po USING (id_photo)
                             INNER JOIN (SELECT id_person, count(id_person) as count 
                                         FROM player_match GROUP BY id_person) m 
                             USING (id_person) 
