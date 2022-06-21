@@ -55,42 +55,48 @@
 
 <!--HEADER-->
 
-<div class="position-relative justify-content-center start-25 w-50 row">
+<div class="position-relative justify-content-center start-25 w-50 row" id="profileSpace">
 
   <img class="form-label d-flex justify-content-center p-3" src="../img/icons/profileBlue.svg" alt="logo" height="150">
 
   <div class="p-3 mb-3 rounded-3 bg-clearGrey border-0">
-    <span>Nom Prénom</span>
+    <span id="nameOutput">Nom Prénom</span>
   </div>
 
   <div class="p-3 mb-3 rounded-3 border border-clearGrey border-3 align-items-center">
     <img src="../img/icons/map.svg" alt="logo">
     <span class="px-2 text-clearGrey">Ville :</span>
-    <span >ville</span>
+    <span id="townOutput">ville</span>
   </div>
 
   <div class="p-3 mb-3 rounded-3 border border-clearGrey border-3 align-items-center">
     <img src="../img/icons/user.svg" alt="logo">
     <span class="px-2 text-clearGrey">Âge :</span>
-    <span >XX</span>
+    <span id="ageOutput">XX</span>
+  </div>
+
+  <div class="p-3 mb-3 rounded-3 border border-clearGrey border-3 align-items-center">
+    <img src="../img/icons/mail.svg" alt="logo">
+    <span class="px-2 text-clearGrey">E-mail :</span>
+    <span id="mailOutput">exemple@mail.fr</span>
   </div>
 
   <div class="p-3 mb-3 rounded-3 border border-clearGrey border-3 align-items-center">
     <img src="../img/icons/security-safe.svg" alt="logo">
     <span class="px-2 text-clearGrey">Mot de passe :</span>
-    <span >•••••••••••••••</span>
+    <span id="passwordOutput">•••••••••••••••</span>
   </div>
 
   <div class="p-3 mb-3 rounded-3 border border-clearGrey border-3 align-items-center">
     <img src="../img/icons/user.svg" alt="logo">
     <span class="px-2 text-clearGrey">Forme sportive :</span>
-    <span >...</span>
+    <span id="formOutput">...</span>
   </div>
 
   <div class="p-3 mb-3 rounded-3 bg-clearGrey border-0 d-flex flex-nowrap align-items-center">
     <img src="../img/icons/LogoBisStrong.svg" alt="logo">
     <span class="px-2">Notez l'application</span>
-    <div>
+    <div id="ratingOutput">
       <img src="../img/icons/filledStar.svg" alt="logo">
       <img src="../img/icons/filledStar.svg" alt="logo">
       <img src="../img/icons/filledStar.svg" alt="logo">
@@ -103,7 +109,7 @@
 
   <div class="p-3 mb-3 rounded-3 bg-clearGrey border-0 align-items-center">
     <img src="../img/icons/badge.svg" alt="logo">
-    <span>23 matchs joués</span>
+    <span id="statOutput">23 matchs joués</span>
   </div>
 
   <div class="align-items-center">
@@ -151,6 +157,8 @@
 
 <!--FOOTER-->
 
+<script src="../js/ajax.js"></script>
+<script src="../js/getPerson.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>

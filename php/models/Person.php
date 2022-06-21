@@ -71,7 +71,9 @@ class Person {
     public function getPerson($id_match, $id_person){
         if ($id_person != null){
             try {
-                $request = "SELECT * FROM person WHERE id_person=:id_person;";
+                $request = "SELECT pe.*, p.path FROM person pe
+                            INNER JOIN photo p USING (id_photo)
+                            WHERE id_person=:id_person;";
                 $statement = $this->connection->prepare($request);
                 $statement->bindParam(':id_person', $id_person, PDO::PARAM_INT);
                 $statement->execute();
