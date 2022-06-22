@@ -88,7 +88,6 @@ class Person {
                 error_log('Request error: '.$exception->getMessage());
                 return false;
             }
-            return $result;
         }
         if ($id_match != null){
             try {
@@ -108,8 +107,8 @@ class Person {
                 error_log('Request error: '.$exception->getMessage());
                 return false;
             }
-            return $result;
         }
+        return $result;
     }
 
     public function updatePerson($id_person){

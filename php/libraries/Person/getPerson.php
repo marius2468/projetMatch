@@ -12,9 +12,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'){
     require_once("../../models/Person.php");
     $db = new Database();
     $dataBase = $db->getConnection();
-    if (!empty($_GET['id_person'])) {
+    if (!empty($_SESSION['id_person'])) {
         $person = new Person($dataBase);
-        $result = $person->getPerson(null, $_GET['id_person']);
+        $result = $person->getPerson(null, $_SESSION['id_person']);
         if ($result){
             http_response_code(200);
             echo json_encode($result);

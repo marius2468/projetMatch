@@ -1,33 +1,7 @@
-function $_GET(param) {
-    var vars = {};
-    window.location.href.replace( location.hash, '' ).replace(
-        /[?&]+([^=&]+)=?([^&]*)?/gi, // regexp
-        function( m, key, value ) { // callback
-            vars[key] = value !== undefined ? value : '';
-        }
-    );
-
-    if ( param ) {
-        return vars[param] ? vars[param] : null;
-    }
-    return vars;
-}
-
-// let id_person = $_GET('id_person')
-let id_person = 993;
-
-ajaxRequest('GET', '../php/libraries/Person/getPerson.php?id_person=' + id_person, displayPerson);
-
-function disconnect(event){
-    ajaxRequest('GET', '../php/libraries/Person/disconnect.php', callback);
-}
-
-function callback(message){
-    console.log(message);
-    document.location.href="connection.html";
-}
+ajaxRequest('GET', '../php/libraries/Person/getPerson.php', displayPerson);
 
 function displayPerson(person){
+    console.log(person);
     let displayNote =  '';
     for (let i = 1; i <= 5; i++) {
         if (i <= person[0].application_note){
@@ -112,4 +86,14 @@ function displayPerson(person){
         '      <span>Se déconnecter</span>\n' +
         '    </a>\n' +
         '  </div>');
+}
+
+
+function disconnect(event){
+    ajaxRequest('GET', '../php/libraries/Person/disconnect.php', callback);
+}
+
+function callback(message){
+    console.log(message);
+    document.location.href="connection.html";
 }

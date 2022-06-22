@@ -10,6 +10,7 @@ class Database {
 
     public function getConnection(){
         try {
+            session_start();
             $this->connection = new PDO('pgsql:host='.$this->dbHost.';port='.$this->dbPort.';dbname='.$this->dbName, $this->dbUser, $this->dbPassword);
             $this->connection->exec("set names utf8");
         }

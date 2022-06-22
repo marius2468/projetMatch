@@ -15,14 +15,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'PUT'){
     $db = new Database();
     $dataBase = $db->getConnection();
     $data = json_decode(file_get_contents("php://input"));
-    if (!empty($data->id_person) && !empty($data->password) && !empty($data->id_photo) && !empty($data->id_city) && !empty($data->age) && !empty($data->id_physical_form)) {
+    if (!empty($data->password) && !empty($data->id_photo) && !empty($data->id_city) && !empty($data->age) && !empty($data->id_physical_form) && !empty($_SESSION['id_person'])) {
         $person = new Person($dataBase);
         $person->password = $data->password;
         $person->id_photo = $data->id_photo;
         $person->id_city = $data->id_city;
         $person->age = $data->age;
         $person->id_physical_form = $data->id_physical_form;
-        $result = $person->updatePerson($data->id_person);
+        $result = $person->updatePerson($_SESSION['id_person']);
         if ($result){
             http_response_code(200);
             echo json_encode(["message" => "Person update with success"]);
