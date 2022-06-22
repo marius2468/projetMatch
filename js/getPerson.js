@@ -18,6 +18,15 @@ let id_person = 993;
 
 ajaxRequest('GET', '../php/libraries/Person/getPerson.php?id_person=' + id_person, displayPerson);
 
+function disconnect(event){
+    ajaxRequest('GET', '../php/libraries/Person/disconnect.php', callback);
+}
+
+function callback(message){
+    console.log(message);
+    document.location.href="connection.html";
+}
+
 function displayPerson(person){
     let displayNote =  '';
     for (let i = 1; i <= 5; i++) {
@@ -98,7 +107,7 @@ function displayPerson(person){
         '  </div>\n' +
         '\n' +
         '  <div class="mb-3 align-items-center">\n' +
-        '    <a class="btn btn-darkYellow nav-item text-white shadow rounded-3" href="connection.html">\n' +
+        '    <a class="btn btn-darkYellow nav-item text-white shadow rounded-3" onclick="disconnect()">\n' +
         '      <img src="../img/icons/logout.svg" alt="logo">\n' +
         '      <span>Se déconnecter</span>\n' +
         '    </a>\n' +

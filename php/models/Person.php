@@ -138,4 +138,32 @@ class Person {
         }
     }
 
+    public function connection($email, $password){
+        try {
+            $request = "SELECT password, id_person FROM person WHERE email=:email;";
+            $statement = $this->connection->prepare($request);
+            $statement->bindParam(':email', $email, PDO::PARAM_STR, 200);
+            $statement->execute();
+            $res = $statement->fetchAll(PDO::FETCH_ASSOC);
+            if (password_verify($password, $res[0]['password'])){
+                $result = $res[0]['id_person'];
+            }
+        }
+        catch (PDOException $exception){
+            error_log('Request error: '.$exception->getMessage());
+            return false;
+        }
+        return $result;
+    }
+
+    public function disconnect(){
+        try {
+            unset($_SESSION['id_person']);
+        }
+        catch (PDOException $exception){
+            error_log('Request error: '.$exception->getMessage());
+            return false;
+        }
+        return true;
+    }
 }
