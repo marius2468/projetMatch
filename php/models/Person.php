@@ -59,7 +59,14 @@ class Person {
             $statement->bindParam(':id_photo', $this->id_photo, PDO::PARAM_INT);
             $statement->bindParam(':id_city', $this->id_city, PDO::PARAM_INT);
             $statement->bindParam(':id_physical_form', $this->id_physical_form, PDO::PARAM_INT);
-            $statement->execute();
+            if ($statement->execute()){
+                $request2 = "SELECT id_person FROM person WHERE email=:email;";
+                $statement2 = $this->connection->prepare($request2);
+                $statement2->bindParam(':email', $this->email, PDO::PARAM_STR, 200);
+                $statement2->execute();
+                $result = $statement2->fetchAll(PDO::FETCH_ASSOC);
+                $_SESSION['id_person'] = $result[0]['id_person'];
+            }
         }
         catch (PDOException $exception){
             error_log('Request error: '.$exception->getMessage());

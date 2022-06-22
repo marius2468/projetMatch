@@ -34,7 +34,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
             http_response_code(503);
             echo json_encode(["message" => "This person already exist"]);
         }
-
     }
     else{
         http_response_code(400);
