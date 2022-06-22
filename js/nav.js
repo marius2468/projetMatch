@@ -17,4 +17,4 @@ function nav(){
     }
 }
 window.addEventListener('resize', nav);
-window.addEventListener('DOMContentLoaded', nav);
+window.addEventListener('load', nav);
