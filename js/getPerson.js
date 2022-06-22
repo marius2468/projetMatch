@@ -21,6 +21,9 @@ function displayPerson(person){
     if (person[0].count > 1){
         nbrMatchPlayed = person[0].count + 'matchs joués';
     }
+    if (person[0].name_form === null){
+        person[0].name_form = '';
+    }
 
 
     $('#photoProfile').append('<img class="form-label col-4 m-2" src=' + person[0].path + ' alt="logo">\n');
