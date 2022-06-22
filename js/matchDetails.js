@@ -70,13 +70,18 @@ function displayMatch(match){
             '                   </div>\n' +
             '               </div>');
     }
-
     ajaxRequest('GET', '../php/libraries/Person/getPerson.php?id_match=' + id_match, displayParticipants);
 }
 
-function reserveMatch(message){
+function reserveMatch(event){
+    let id_match = $_GET('id_match');
+    let data = 'id_match=' + id_match;
+    ajaxRequest('POST', '../php/libraries/Notification/createNotification.php', displaySuccess, data);
+}
 
-    ajaxRequest('POST', '../php/libraries/Notification/createNotification.php', )
+function displaySuccess(message){
+    $('#match').html('');
+    $('#match').append('<span>' + message.message+ '</span>');
 }
 
 function displayParticipants(participants){

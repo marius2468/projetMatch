@@ -1021,7 +1021,8 @@ VALUES  ('https://robohash.org/nobisanimiet.png?size=50x50&set=set1'),
         ('../img/avatars/avatar3.svg'), /*1025*/
         ('../img/avatars/avatar4.svg'), /*1026*/
         ('../img/avatars/avatar5.svg'), /*1027*/
-        ('../img/avatars/avatar6.svg'); /*1028*/
+        ('../img/avatars/avatar6.svg'), /*1028*/
+        ('../img/icons/profileRegister.svg');/*1029*/
 
 INSERT INTO sport (name, nb_max, id_photo)
 VALUES ('Badminton', 4, 1001),

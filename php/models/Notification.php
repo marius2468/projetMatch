@@ -65,7 +65,7 @@ class Notification {
         try {
             $request = "INSERT INTO player_match (id_match, id_person, nb_goal, best_player, accept)
                         VALUES (:id_match, :id_person, null, false, false)";
-            $statement = $this->connection->prepare();
+            $statement = $this->connection->prepare($request);
             $statement->bindParam(':id_match', $id_match, PDO::PARAM_INT);
             $statement->bindParam(':id_person', $id_person, PDO::PARAM_INT);
             $statement->execute();
