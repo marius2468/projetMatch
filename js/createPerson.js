@@ -8,9 +8,9 @@ $('#signUpForm').on('submit', (event) =>
     let password = $('#passwordInput').val();
     event.preventDefault();
     ajaxRequest('POST', '../php/libraries/Person/createPerson.php',displaySuccess,'id_photo=' + id_photo + '&name=' + name + '&first_name=' + first_name + '&id_city=' + id_city + '&email=' + email + '&password=' + password);
-    document.location.href="searchMatch.html";
 });
 
 function displaySuccess(){
     console.log("request create success");
+    document.location.href="searchMatch.html";
 }

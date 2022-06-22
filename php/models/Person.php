@@ -75,7 +75,7 @@ class Person {
                             INNER JOIN photo p USING (id_photo)
                             INNER JOIN physical_form f USING (id_physical_form)
                             INNER JOIN city c USING (id_city)
-                            INNER JOIN (SELECT id_person, count(id_person) as count 
+                            LEFT JOIN (SELECT id_person, count(id_person) as count 
                                         FROM player_match GROUP BY id_person) m 
                             USING (id_person) 
                             WHERE id_person=:id_person;";
