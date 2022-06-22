@@ -71,8 +71,13 @@ class Person {
     public function getPerson($id_match, $id_person){
         if ($id_person != null){
             try {
-                $request = "SELECT pe.*, p.path FROM person pe
+                $request = "SELECT pe.*, p.path, c.name as name_city, f.name as name_form, m.count FROM person pe
                             INNER JOIN photo p USING (id_photo)
+                            INNER JOIN physical_form f USING (id_physical_form)
+                            INNER JOIN city c USING (id_city)
+                            INNER JOIN (SELECT id_person, count(id_person) as count 
+                                        FROM player_match GROUP BY id_person) m 
+                            USING (id_person) 
                             WHERE id_person=:id_person;";
                 $statement = $this->connection->prepare($request);
                 $statement->bindParam(':id_person', $id_person, PDO::PARAM_INT);
