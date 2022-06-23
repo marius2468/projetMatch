@@ -1,3 +1,4 @@
+// function called when the sign up form is completed and who sends an AJAX request to createPerson.php with the input values
 $('#signUpForm').on('submit', (event) =>
 {
     let id_photo = $('input[name="avatarInput"]:checked').val();
@@ -17,6 +18,7 @@ $('#signUpForm').on('submit', (event) =>
     }
 });
 
+// callback function redirecting to the main page
 function displaySuccess(){
     console.log("request create success");
     document.location.href="searchMatch.html";

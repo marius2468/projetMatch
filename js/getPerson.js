@@ -1,7 +1,10 @@
+// AJAX request to get the person related to the SESSION
 ajaxRequest('GET', '../php/libraries/Person/getPerson.php', displayPerson);
 
+// function displaying the person's infos
 function displayPerson(person){
-    console.log(person);
+
+    // App rating displaying 5 stars depending on the user's rating
     let displayNote =  '';
     for (let i = 1; i <= 5; i++) {
         if (i <= person[0].application_note){
@@ -11,6 +14,7 @@ function displayPerson(person){
         }
     }
 
+    // display of the number of match played
     let nbrMatchPlayed = '';
     if (person[0].count == null){
         nbrMatchPlayed = '0 match joué';
@@ -25,8 +29,10 @@ function displayPerson(person){
         person[0].name_form = '';
     }
 
+    // display of the profile picture
     $('#photoProfile').append('<img class="form-label col-4 m-2" src=' + person[0].path + ' alt="logo">\n');
 
+    // display of all the user's main infos (name, fisrname, town, age, e-mail,
     $('#profileSpace').append(' <div class="p-3 mb-3 rounded-2 bg-clearGrey border-0">\n' +
         '    <span id="nameOutput">'+ person[0].name + ' ' + person[0].first_name + '</span>\n' +
         '  </div>\n' +

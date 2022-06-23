@@ -1,3 +1,4 @@
+// function sending an AJAX request to createMatch.php with the input values of the match
 function createClicked(event){
     let id_sport = $('#sportInput').val();
     let id_city = $('#townInput').val();
@@ -20,6 +21,7 @@ function createClicked(event){
     ajaxRequest('POST', '../php/libraries/Match/createMatch.php', callback, data);
 }
 
+// callback function redirecting to the main organisator page
 function callback(message){
     console.log(message);
     document.location.href="notifsOrga.html";
