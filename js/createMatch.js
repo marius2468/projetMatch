@@ -22,4 +22,5 @@ function createClicked(event){
 
 function callback(message){
     console.log(message);
+    document.location.href="notifsOrga.html";
 }

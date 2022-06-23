@@ -134,6 +134,7 @@ class Match {
 
     public function getStats($id_person){
         try {
+            $date  = date('Y-m-d');
             $request = "SELECT c.name as city_name, s.name as name_sport, s.nb_max, m.date_time, m.id_match, p.path, pm.count 
                         FROM match m
                         INNER JOIN city c USING(id_city)
@@ -142,10 +143,12 @@ class Match {
                         LEFT JOIN (SELECT id_match, count(p.id_person) as count FROM player_match p
                         WHERE accept=true
                         GROUP BY id_match) pm USING(id_match)
-                        WHERE m.score = '' OR m.score IS NULL
-                        AND m.id_person=:id_person;";
+                        WHERE (m.score = '' OR m.score IS NULL)
+                        AND m.id_person=:id_person
+                        AND m.date_time<:date;";
             $statement = $this->connection->prepare($request);
             $statement->bindParam(':id_person', $id_person, PDO::PARAM_INT);
+            $statement->bindParam(':date', $date, PDO::PARAM_STR, 200);
             $statement->execute();
             $result = $statement->fetchAll(PDO::FETCH_ASSOC);
         }
@@ -155,7 +158,6 @@ class Match {
         }
         return $result;
     }
-
 
     public function updateMatch($id_match, $id_person, $score){
         try {

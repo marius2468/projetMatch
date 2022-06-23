@@ -12,10 +12,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'PUT'){
     require_once("../../models/Match.php");
     $db = new Database();
     $dataBase = $db->getConnection();
-    $data = json_decode(file_get_contents("php://input"));
-    if (!empty($data->id_match) && !empty($data->id_person) && !empty($data->score)) {
+    parse_str(file_get_contents("php://input"), $data);
+    if (!empty($data['id_match']) && !empty($data['id_person']) && !empty($data['score'])) {
         $match = new Match($dataBase);
-        if ($match->updateMatch($data->id_match, $data->id_person, $data->score)){
+        if ($match->updateMatch($data['id_match'], $data['id_person'], $data['score'])){
             http_response_code(200);
             echo json_encode(["message" => "Match update with success"]);
         }
