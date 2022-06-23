@@ -44,43 +44,43 @@
             <div class="d-flex flex-column">
                 <img src="../img/icons/profileRegister.svg" alt="logo">
                 <label class="visually-hidden" for="avatar">Choix avatar</label>
-                <input class="form-check-input align-self-center" type="radio" name="avatarInput" id="avatar" value="default" checked>
+                <input class="form-check-input align-self-center" type="radio" name="avatarInput" id="avatar" value="" checked>
             </div>
 
             <div class="d-flex flex-column">
                 <img src="../img/avatars/avatar1.svg" alt="logo">
                 <label class="visually-hidden" for="avatar1">Choix avatar</label>
-                <input class="form-check-input align-self-center" type="radio" name="avatarInput" id="avatar1" value="option1">
+                <input class="form-check-input align-self-center" type="radio" name="avatarInput" id="avatar1" value="1012">
             </div>
 
             <div class="d-flex flex-column">
                 <img src="../img/avatars/avatar2.svg" alt="logo">
                 <label class="visually-hidden" for="avatar2">Choix avatar</label>
-                <input class="form-check-input align-self-center" type="radio" name="avatarInput" id="avatar2" value="option2">
+                <input class="form-check-input align-self-center" type="radio" name="avatarInput" id="avatar2" value="1013">
             </div>
 
             <div class="d-flex flex-column">
                 <img src="../img/avatars/avatar3.svg" alt="logo">
                 <label class="visually-hidden" for="avatar3">Choix avatar</label>
-                <input class="form-check-input align-self-center" type="radio" name="avatarInput" id="avatar3" value="option3">
+                <input class="form-check-input align-self-center" type="radio" name="avatarInput" id="avatar3" value="1014">
             </div>
 
             <div class="d-flex flex-column">
                 <img src="../img/avatars/avatar4.svg" alt="logo">
                 <label class="visually-hidden" for="avatar4">Choix avatar</label>
-                <input class="form-check-input align-self-center" type="radio" name="avatarInput" id="avatar4" value="option4">
+                <input class="form-check-input align-self-center" type="radio" name="avatarInput" id="avatar4" value="1015">
             </div>
 
             <div class="d-flex flex-column">
                 <img src="../img/avatars/avatar5.svg" alt="logo">
                 <label class="visually-hidden" for="avatar5">Choix avatar</label>
-                <input class="form-check-input align-self-center" type="radio" name="avatarInput" id="avatar5" value="option5">
+                <input class="form-check-input align-self-center" type="radio" name="avatarInput" id="avatar5" value="1016">
             </div>
 
             <div class="d-flex flex-column">
                 <img src="../img/avatars/avatar6.svg" alt="logo">
                 <label class="visually-hidden" for="avatar6">Choix avatar</label>
-                <input class="form-check-input align-self-center" type="radio" name="avatarInput" id="avatar6" value="option6">
+                <input class="form-check-input align-self-center" type="radio" name="avatarInput" id="avatar6" value="1017">
             </div>
         </div>
     </div>
@@ -147,29 +147,15 @@
     <div class="p-3 mb-3 rounded-3 bg-clearGrey border-0 d-flex flex-nowrap align-items-center">
         <img src="../img/icons/LogoBisStrong.svg" alt="logo">
         <span class="px-2 flex-grow-1">Notez l'application</span>
-        <div class="d-flex flex-fill justify-content-between" id="ratingOutput">
-            <div id="star1" onmouseup="getStarRate(id)" onmouseover="starFill(id)" onmouseout="starFill(id)">
-                <img src="../img/icons/star.svg" alt="logo">
-            </div>
-            <div id="star2" onmouseup="getStarRate(id)" onmouseover="starFill(id)">
-                <img src="../img/icons/star.svg" alt="logo">
-            </div>
-            <div id="star3" onmouseup="getStarRate(id)" onmouseover="starFill(id)">
-                <img src="../img/icons/star.svg" alt="logo">
-            </div>
-            <div id="star4" onmouseup="getStarRate(id)" onmouseover="starFill(id)">
-                <img src="../img/icons/star.svg" alt="logo">
-            </div>
-            <div id="star5" onmouseup="getStarRate(id)" onmouseover="starFill(id)">
-                <img src="../img/icons/star.svg" alt="logo">
-            </div>
+        <div class="d-flex flex-fill justify-content-between" id="ratingOutput" value="">
+
         </div>
     </div>
 
 
 
     <div class="mb-3 align-items-center">
-        <a class="btn btn-darkYellow nav-item text-white shadow rounded-3" href="profile.html">
+        <a class="btn btn-darkYellow nav-item text-white shadow rounded-3" onclick="submitForm()">
             <img src="../img/icons/tick-square.svg" alt="logo">
             <span>Valider</span>
         </a>
