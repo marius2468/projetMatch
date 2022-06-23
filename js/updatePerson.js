@@ -71,11 +71,12 @@ function submitForm(event){
     let id_city = $('#townOutput').val();
 
     let password1 = $('#passwordInput1').val();
-    let password2 = $('#passwordInput2').val();
 
     let age = $('#ageOutput').val();
     let id_physical_form = $('#formSelect').val();
     let application_note = $('#starText').val();
+
+    let isPasswordModified = false;
 
     if (isNaN(age)){
         age = null;
@@ -86,18 +87,13 @@ function submitForm(event){
     if (isNaN(application_note)){
         application_note = null;
     }
-    if (password1 === '•••••••••'){
+    if (password1 === ''){
         password1 = null;
     }
 
-    if (password1 == password2){
-        let data = 'id_photo=' + id_photo + '&id_city=' + id_city + '&password=' + password1 + '&age=' + age + '&id_physical_form=' + id_physical_form + '&application_note=' + application_note;
-        console.log(data);
-        ajaxRequest('PUT', '../php/libraries/Person/updatePerson.php',putSuccess, data);
-    } else {
-        // event.preventDefault();
-        $('#errors').html('<label class="form-label">Mots de passes différents</label>');
-    }
+    let data = 'id_photo=' + id_photo + '&id_city=' + id_city + '&password=' + password1 + '&age=' + age + '&id_physical_form=' + id_physical_form + '&application_note=' + application_note;
+    console.log(data);
+    ajaxRequest('PUT', '../php/libraries/Person/updatePerson.php',putSuccess, data);
 }
 
 function putSuccess(){
@@ -130,4 +126,20 @@ function getStarRate(id_star){
     let id = id_star;
     let rate = id.slice(id.length - 1);
     $('#starText').val(rate);
+}
+
+function displayModifPassword(){
+    $('#passwordChange').html('<label className="form-label d-flex">Mot de passe</label>\n' +
+        '    <div className="form-floating mb-2">\n' +
+        '        <input type="password" className="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="passwordInput1"\n' +
+        '               placeholder="mot de  passe">\n' +
+        '            <label className="ps-4 text-darkGrey" htmlFor="passwordInput1">Entrez un mot de passe</label>\n' +
+        '    </div>\n' +
+        '    <div className="form-floating mb-3">\n' +
+        '        <input type="password" className="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="passwordInput2"\n' +
+        '               placeholder="mot de passe">\n' +
+        '            <label className="ps-4 text-darkGrey" htmlFor="passwordInput2">Confirmation du mot de passe</label>\n' +
+        '    </div>');
+
+    $('#isPasswordModified').attr("value",1);
 }
