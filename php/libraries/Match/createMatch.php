@@ -12,16 +12,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $db = new Database();
     $dataBase = $db->getConnection();
     parse_str(file_get_contents("php://input"), $data);
-    if (!empty($data->address) && !empty($data->date_time) && !empty($data->price) && !empty($data->id_person) && !empty($data->id_sport) && !empty($data->id_city)){
+    if (!empty($data['address']) && !empty($data['date_time']) && !empty($data['price']) && !empty($_SESSION['id_person']) && !empty($data['id_sport']) && !empty($data['id_city']) && !empty($data['duration'])){
         $match = new Match($dataBase);
-        $match->address = $data->address;
-        $match->date_time = $data->date_time;
-        $match->price = $data->price;
-        $match->id_person = $data->id_person;
-        $match->id_sport = $data->id_sport;
-        $match->id_city = $data->id_city;
+        $match->address = $data['address'];
+        $match->date_time = $data['date_time'];
+        $match->price = $data['price'];
+        $match->id_sport = $data['id_sport'];
+        $match->id_city = $data['id_city'];
+        $match->duration = $data['duration'];
 
-        if ($match->createMatch()){
+        if ($match->createMatch($_SESSION['id_person'])){
             http_response_code(201);
             echo json_encode(["message" => "Match created with success"]);
         }

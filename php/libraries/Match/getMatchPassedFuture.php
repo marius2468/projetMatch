@@ -12,9 +12,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'){
     require_once("../../models/Match.php");
     $db = new Database();
     $dataBase = $db->getConnection();
-    if (!empty($_GET['id_person']) && !empty($_GET['passed'])) {
+    if (!empty($_SESSION['id_person']) && !empty($_GET['passed'])) {
         $match = new Match($dataBase);
-        $result = $match->getMatchPassedFuture($_GET['id_person'], $_GET['passed']);
+        $result = $match->getMatchPassedFuture($_SESSION['id_person'], $_GET['passed']);
         if ($result){
             http_response_code(200);
             echo json_encode($result);

@@ -2,20 +2,18 @@
 
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
-header("Access-Control-Allow-Methods: GET");
+header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
-
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET'){
     require_once("../../config/Database.php");
     require_once("../../models/Notification.php");
     $db = new Database();
     $dataBase = $db->getConnection();
-    $data = json_decode(file_get_contents("php://input"));
-    if (!empty($data->id_person)) {
+    if (!empty($_SESSION['id_person'])) {
         $notification = new Notification($dataBase);
-        $result = $notification->getNotification($data->id_person);
+        $result = $notification->getNotification($_SESSION['id_person']);
         if ($result){
             http_response_code(200);
             echo json_encode($result);

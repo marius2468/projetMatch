@@ -8,6 +8,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="../js/nav.js"></script>
+    <script src="../js/ajax.js"></script>
+    <script src="../js/createMatch.js"></script>
 </head>
 <body>
 
@@ -65,20 +67,49 @@
 
                     <label class="form-label flex-nowrap">Type de sport*</label>
                     <div class="form-floating mb-3 d-flex">
-                        <input type="text" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="sportInput" placeholder="sport">
-                        <label class="ps-4 text-darkGrey" for="sportInput">Entrez le type de sport</label>
-                    </div>
-
-                    <label class="form-label flex-nowrap">Nombre de joueurs maximum*</label>
-                    <div class="form-floating mb-3 d-flex">
-                        <input type="text" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="maxPlayersInput" placeholder="nombreMax">
-                        <label class="ps-4 text-darkGrey" for="maxPlayersInput">Entrez le nombre max de joueurs</label>
+                        <label class="visually-hidden" for="sportInput">Sport</label>
+                        <select class="form-select rounded-3 bg-clearGrey shadow shadow-inset text-darkGrey py-1" id="sportInput" required="required">
+                            <option selected value="">Choisir Sport...</option>
+                            <option value="1">Badminton</option>
+                            <option value="2">Tennis</option>
+                            <option value="3">Ping-Pong</option>
+                            <option value="4">Boxe Anglaise</option>
+                            <option value="5">FootBall</option>
+                            <option value="6">BasketBall</option>
+                            <option value="7">Rugby</option>
+                            <option value="8">WaterPolo</option>
+                            <option value="9">Cricket</option>
+                            <option value="10">Hockey</option>
+                            <option value="11">BaseBall</option>
+                        </select>
                     </div>
 
                     <label class="form-label flex-nowrap">Ville</label>
                     <div class="form-floating mb-3 d-flex">
-                        <input type="text" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="townInput" placeholder="ville">
-                        <label class="ps-4 text-darkGrey" for="townInput">Entrez la ville du match</label>
+                        <label class="visually-hidden" for="townInput">Ville</label>
+                        <select type="text" class="form-select rounded-3 bg-clearGrey shadow shadow-inset text-darkGrey py-1" id="townInput" required="required">
+                            <option selected value="">Choisir Ville...</option>
+                            <option value="1">Paris</option>
+                            <option value="2">Marseille</option>
+                            <option value="3">Lyon</option>
+                            <option value="4">Toulouse</option>
+                            <option value="5">Nice</option>
+                            <option value="6">Nantes</option>
+                            <option value="7">Montpellier</option>
+                            <option value="8">Strasbourg</option>
+                            <option value="9">Bordeaux</option>
+                            <option value="10">Lille</option>
+                            <option value="11">Rennes</option>
+                            <option value="12">Caen</option>
+                            <option value="13">Toulon</option>
+                            <option value="14">Saint-Etienne</option>
+                            <option value="15">Le Havre</option>
+                            <option value="16">Grenoble</option>
+                            <option value="17">Dijon</option>
+                            <option value="18">Angers</option>
+                            <option value="19">Villeurbanne</option>
+                            <option value="20">Saint-Deni</option>
+                        </select>
                     </div>
 
                     <label class="form-label flex-nowrap">Adresse</label>
@@ -87,31 +118,30 @@
                         <label class="ps-4 text-darkGrey" for="addressInput">Entrez l'adresse du match</label>
                     </div>
 
-                    <label class="form-label flex-nowrap">Heure*</label>
+                    <label class="form-label flex-nowrap">Date et Heure*</label>
                     <div class="form-floating mb-3 d-flex">
-                        <input type="text" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="hourInput" placeholder="hour">
-                        <label class="ps-4 text-darkGrey" for="hourInput">Entrez l'heure de début du match</label>
+                        <input type="datetime-local" class="form-control rounded-3 bg-clearGrey shadow shadow-inset text-darkGrey py-1" id="hourInput" placeholder="hour">
+                        <label class="ps-4 text-darkGrey visually-hidden" for="hourInput">Entrez l'heure de début du match</label>
                     </div>
 
                     <label class="form-label flex-nowrap">Durée*</label>
                     <div class="form-floating mb-3 d-flex">
-                        <input type="text" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="durationInput" placeholder="duration">
-                        <label class="ps-4 text-darkGrey" for="durationInput">Entrez la durée d'un match</label>
+                        <input type="number" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="durationInput" placeholder="duration">
+                        <label class="ps-4 text-darkGrey" for="durationInput">Entrez la durée d'un match en min</label>
                     </div>
 
                     <label class="form-label flex-nowrap">Prix*</label>
                     <div class="form-floating mb-3 d-flex">
-                        <input type="text" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="priceInput" placeholder="price">
+                        <input type="number" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="priceInput" placeholder="price">
                         <label class="ps-4 text-darkGrey" for="priceInput">Entrez le prix du match</label>
                     </div>
 
                     <label class="form-label">*Champs obligatoires</label>
-                    <a class="btn btn-darkYellow d-flex nav-item text-white shadow-lg p-3 mb-5 rounded-3 justify-content-center" href="#"><span>Créer le match</span></a>
+                    <button class="btn btn-darkYellow d-flex nav-item text-white shadow-lg p-3 mb-5 rounded-3 justify-content-center w-100" onclick="createClicked()"><span>Créer le match</span></button>
                 </div>
             </div>
+            <div class="alert" role="alert" id="errors"></div>
         </div>
-
-
     </div>
 </div>
 

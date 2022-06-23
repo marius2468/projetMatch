@@ -9,14 +9,15 @@ class Notification {
 
     public function getNotification($id_person){
         try {
-            $request = "SELECT p.name, p.first_name, m.date_time, m.address || ', ' || c.zipcode || ' ' || c.name || ', France' as address
+            $request = "SELECT p.name, p.first_name, p.id_person, p2.path, m.id_match, m.date_time, m.address || ', ' || c.zip_code || ' ' || c.name || ', France' as address
                         FROM player_match pm
                         INNER JOIN person p USING (id_person)
+                        INNER JOIN photo p2 on p2.id_photo = p.id_photo    
                         INNER JOIN match m USING (id_match)
                         INNER JOIN city c on m.id_city = c.id_city
                         WHERE accept=false
                         AND m.id_person=:id_person;";
-            $statement = $this->connection->prepare();
+            $statement = $this->connection->prepare($request);
             $statement->bindParam(':id_person', $id_person, PDO::PARAM_INT);
             $statement->execute();
             $result = $statement->fetchAll(PDO::FETCH_ASSOC);

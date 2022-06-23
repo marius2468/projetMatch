@@ -1,4 +1,4 @@
-ajaxRequest('GET', '../php/libraries/Match/getMatchPassedFuture.php?id_person=201&passed=2', displayMatchPassed)
+ajaxRequest('GET', '../php/libraries/Match/getMatchPassedFuture.php?passed=2', displayMatchPassed)
 
 function displayMatchPassed(matchs){
     for (let match of matchs){

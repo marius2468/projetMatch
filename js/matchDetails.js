@@ -70,7 +70,7 @@ function displayMatch(match){
             '                   </div>\n' +
             '               </div>');
     }
-    ajaxRequest('GET', '../php/libraries/Person/getPerson.php?id_match=' + id_match, displayParticipants);
+    ajaxRequest('GET', '../php/libraries/Person/getPerson.php?id_match=' + $_GET('id_match'), displayParticipants);
 }
 
 function reserveMatch(event){
