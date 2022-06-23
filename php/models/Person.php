@@ -127,14 +127,14 @@ class Person {
         $this->id_physical_form = htmlspecialchars(strip_tags($this->id_physical_form));;
         $this->application_note = htmlspecialchars(strip_tags($this->application_note));;
         if ($id_person != null){
-            if ($this->password != null){
+            if ($this->password != ''){
                 $request = "UPDATE person SET password=:password WHERE id_person=:id_person;";
                 $statement = $this->connection->prepare($request);
                 $statement->bindParam(':password', $this->password, PDO::PARAM_STR, 1000);
                 $statement->bindParam(':id_person', $id_person, PDO::PARAM_INT);
                 $statement->execute();
             }
-            if ($this->application_note != null){
+            if ($this->application_note != ''){
                 $request = "UPDATE person SET application_note=:application_note WHERE id_person=:id_person;";
                 $statement = $this->connection->prepare($request);
                 $statement->bindParam(':application_note', $this->application_note, PDO::PARAM_INT);
@@ -148,7 +148,7 @@ class Person {
                 $statement->bindParam(':id_person', $id_person, PDO::PARAM_INT);
                 $statement->execute();
             }
-            if ($this->id_physical_form != null){
+            if ($this->id_physical_form != ''){
                 $request = "UPDATE person SET id_physical_form=:id_physical_form WHERE id_person=:id_person;";
                 $statement = $this->connection->prepare($request);
                 $statement->bindParam(':id_physical_form', $this->id_physical_form, PDO::PARAM_INT);
