@@ -7,7 +7,6 @@ function onSubmit(event){
     let email2 = $('#mailInput2').val();
     let password1 = $('#passwordInput1').val();
     let password2 = $('#passwordInput2').val();
-    console.log('caca');
     if (password1 === password2 && email1 === email2){
         ajaxRequest('POST', '../php/libraries/Person/createPerson.php',displaySuccess,'id_photo=' + id_photo + '&name=' + name + '&first_name=' + first_name + '&id_city=' + id_city + '&email=' + email1 + '&password=' + password1);
     } else {

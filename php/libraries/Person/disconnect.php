@@ -9,19 +9,11 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET'){
     require_once("../../config/Database.php");
-    require_once("../../models/Person.php");
     $db = new Database();
     $dataBase = $db->getConnection();
-    $person = new Person($dataBase);
-    $result = $person->disconnect();
-    if ($result){
-        http_response_code(200);
-        echo json_encode(["message" => "disconnect"]);
-    }
-    else{
-        http_response_code(503);
-        echo json_encode(["message" => "We failed to connect the person"]);
-    }
+    unset($_SESSION['id_person']);
+    http_response_code(200);
+    echo json_encode(["message" => "disconnect"]);
 }
 else{
     http_response_code(405);

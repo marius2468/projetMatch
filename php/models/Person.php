@@ -120,14 +120,13 @@ class Person {
     }
 
     public function updatePerson($id_person){
-        $this->password = password_hash($this->password, PASSWORD_DEFAULT);
         $this->id_photo = htmlspecialchars(strip_tags($this->id_photo));
         $this->id_city = htmlspecialchars(strip_tags($this->id_city));
         if ($id_person != null){
             if ($this->password != null){
                 $request = "UPDATE person SET password=:password WHERE id_person=:id_person;";
                 $statement = $this->connection->prepare($request);
-                $statement->bindParam(':password', $this->password, PDO::PARAM_STR, 1000);
+                $statement->bindParam(':password', password_hash($this->password,PASSWORD_DEFAULT), PDO::PARAM_STR, 1000);
                 $statement->bindParam(':id_person', $id_person, PDO::PARAM_INT);
                 $statement->execute();
             }
@@ -178,16 +177,5 @@ class Person {
             return false;
         }
         return $result;
-    }
-
-    public function disconnect(){
-        try {
-            unset($_SESSION['id_person']);
-        }
-        catch (PDOException $exception){
-            error_log('Request error: '.$exception->getMessage());
-            return false;
-        }
-        return true;
     }
 }
