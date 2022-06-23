@@ -20,8 +20,6 @@ function displayModifPerson(person){
                 '        <img src="../img/icons/star.svg" alt="logo">\n' +
                 '    </div>';
         }
-
-
     }
 
     let nbrMatchPlayed = '';
@@ -61,6 +59,9 @@ function displayModifPerson(person){
     }
 
     $('#ratingOutput').append(displayNote);
+
+    $('#defaultPhoto').html('<img class="align-self-center p-1" src="' + person[0].path + '" alt="logo" width="65" height="65">' +
+        '<input class="form-check-input align-self-center" type="radio" name="avatarInput" id="avatar" value="' + person[0].id_photo + '" checked>');
 
     $('#nameOutput').append(person[0].name + ' ' + person[0].first_name);
 }
