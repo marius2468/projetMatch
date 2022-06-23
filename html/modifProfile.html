@@ -41,10 +41,8 @@
     <div class="d-flex flex-column justify-content-center flex-fill align-items-center mb-3">
 
         <div class="d-flex mb-3">
-            <div class="d-flex flex-column">
-                <img src="../img/icons/profileRegister.svg" alt="logo">
-                <label class="visually-hidden" for="avatar">Choix avatar</label>
-                <input class="form-check-input align-self-center" type="radio" name="avatarInput" id="avatar" value="" checked>
+            <div class="d-flex flex-column justify-content-around me-4 border-end border-clearGrey pb-2" id="defaultPhoto">
+
             </div>
 
             <div class="d-flex flex-column">
@@ -123,8 +121,8 @@
 
     <label class="form-label d-flex">Mot de passe</label>
     <div class="form-floating mb-2">
-        <input type="password" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="passwordInput" placeholder="mot de  passe" value="•••••••••">
-        <label class="ps-4 text-darkGrey" for="passwordInput">Entrez un mot de passe</label>
+        <input type="password" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="passwordInput1" placeholder="mot de  passe" value="•••••••••">
+        <label class="ps-4 text-darkGrey" for="passwordInput1">Entrez un mot de passe</label>
     </div>
     <div class="form-floating mb-3">
         <input type="password" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="passwordInput2" placeholder="mot de passe" value="•••••••••">
@@ -148,7 +146,9 @@
         </div>
     </div>
 
+    <div id="errors">
 
+    </div>
 
     <div class="mb-3 align-items-center">
         <a class="btn btn-darkYellow nav-item text-white shadow rounded-3" onclick="submitForm()">
