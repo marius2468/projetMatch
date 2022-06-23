@@ -14,7 +14,6 @@
 <body>
 
 <!--HEADER-->
-
 <nav class="navbar sticky-top navbar-fixed-top navbar-expand-lg bg-clearBlue p-md-3">
     <div class="container">
         <a class="navbar-brand" href="searchMatch.html"><img src="../img/icons/logo.svg" alt="logo" height="50" id="logo"></a>
@@ -34,10 +33,11 @@
     </div>
 </nav>
 
-<!--HEADER-->
-
+<!--Content frame-->
 <div class="container-fluid">
     <div class="row flex-nowrap">
+
+        <!--Sidebar-->
         <div class="col-auto bg-clearBlue m-1 rounded shadow shadow-lg">
             <div class="d-flex flex-column align-items-center align-items-sm-start text-white min-vh-100 pt-2">
                 <div class="nav nav-pills flex-column align-items-center align-items-sm-start gap-3">
@@ -54,8 +54,14 @@
                 </div>
             </div>
         </div>
+
+        <!--Search frame-->
         <div class="col py-3">
+
+            <!--Search form-->
             <form class="row row-cols-lg-auto g-3 align-items-center bg-clearGrey my-1 rounded shadow py-3 justify-content-between" id="searchForm">
+
+                <!--Town input-->
                 <div class="col-12 my-lg-1">
                     <label class="visually-hidden" for="townInput">Ville</label>
                     <select type="text" class="form-select shadow-sm shadow-inset" id="townInput" required="required">
@@ -82,6 +88,8 @@
                         <option value="20">Saint-Deni</option>
                     </select>
                 </div>
+
+                <!--Sport input-->
                 <div class="col-12 my-lg-1">
                     <label class="visually-hidden" for="sportInput">Sport</label>
                     <select class="form-select shadow-sm shadow-inset" id="sportInput" required="required">
@@ -99,6 +107,8 @@
                         <option value="11">BaseBall</option>
                     </select>
                 </div>
+
+                <!--Period input-->
                 <div class="col-12 my-lg-1">
                     <label class="visually-hidden" for="periodInput">Preference</label>
                     <select class="form-select shadow-sm shadow-inset" id="periodInput" required="required">
@@ -108,6 +118,8 @@
                         <option value="+30%20days">+30j</option>
                     </select>
                 </div>
+
+                <!--Event full input-->
                 <div class="col-12 my-lg-1">
                     <div class="form-check">
                         <input class="form-check-input shadow-inset" type="checkbox" id="completeInput" value="2">
@@ -116,20 +128,25 @@
                         </label>
                     </div>
                 </div>
+
+                <!--Search button-->
                 <div class="col-12 my-lg-1">
                     <button type="button" onclick="searchMatch()" class="btn btn-clearYellow shadow" id="btnSubmit">
                         <img src="../img/icons/search.svg" alt="search"><span class="ms-3 d-none d-sm-inline text-decoration-none text-white">Rechercher</span>
                     </button>
                 </div>
             </form>
+
+            <!--Errors frame-->
             <div class="alert" role="alert" id="errors"></div>
+
+            <!--Match display frame-->
             <div id="match"></div>
         </div>
     </div>
 </div>
 
 <!--FOOTER-->
-
 <footer class="bg-clearBlue text-white text-center text-md-start">
     <div class="container p-4">
         <div class="row">
@@ -155,8 +172,6 @@
         <a class="text-white" href="searchMatch.html">ChronoMatch.com</a>
     </div>
 </footer>
-
-<!--FOOTER-->
 
 </body>
 </html>
