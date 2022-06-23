@@ -65,15 +65,15 @@ class Person {
                 $statement2 = $this->connection->prepare($request2);
                 $statement2->bindParam(':email', $this->email, PDO::PARAM_STR, 200);
                 $statement2->execute();
-                $result = $statement2->fetchAll(PDO::FETCH_ASSOC);
-                $_SESSION['id_person'] = $result[0]['id_person'];
+                $res = $statement2->fetchAll(PDO::FETCH_ASSOC);
+                $result = $res[0]['id_person'];
             }
         }
         catch (PDOException $exception){
             error_log('Request error: '.$exception->getMessage());
             return false;
         }
-        return true;
+        return $result;
     }
 
     public function getPerson($id_match, $id_person){

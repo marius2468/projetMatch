@@ -1,5 +1,4 @@
-$('#signUpForm').on('submit', (event) =>
-{
+function onSubmit(event){
     let id_photo = $('input[name="avatarInput"]:checked').val();
     let name = $('#nameInput').val();
     let first_name = $('#firstNameInput').val();
@@ -8,14 +7,13 @@ $('#signUpForm').on('submit', (event) =>
     let email2 = $('#mailInput2').val();
     let password1 = $('#passwordInput1').val();
     let password2 = $('#passwordInput2').val();
-
+    console.log('caca');
     if (password1 === password2 && email1 === email2){
         ajaxRequest('POST', '../php/libraries/Person/createPerson.php',displaySuccess,'id_photo=' + id_photo + '&name=' + name + '&first_name=' + first_name + '&id_city=' + id_city + '&email=' + email1 + '&password=' + password1);
     } else {
-        event.preventDefault();
-        $('#errors').html('<label class="form-label">E-mails ou mots de passes différents</label>');
+      $('#errors').html('<label class="form-label">E-mails ou mots de passes différents</label>');
     }
-});
+}
 
 function displaySuccess(){
     console.log("request create success");

@@ -21,7 +21,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         $person->id_photo = $data['id_photo'];
         $person->id_city = $data['id_city'];
         if ($person->verifyPerson()){
-            if ($person->createPerson()){
+            $result = $person->createPerson();
+            if ($result){
+                $_SESSION['id_person'] = $result;
                 http_response_code(201);
                 echo json_encode(["message" => "Person created with success"]);
             }
