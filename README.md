@@ -40,12 +40,12 @@ Ce projet a été résalisé par **ROGERIEUX Maxence** et **FREMOND Marius** du 
 > Ci-dessous quelques couple login/mdp intérressant pour voir le bon fonctionnement du site web.
 > 
 > ### Organisateur
-> jmegson0@squarespace.com / *y9n2fo*
-> bpipworth1@addtoany.com / *fb7ZSMUoB2*
+> - jmegson0@squarespace.com / *y9n2fo*
+> - bpipworth1@addtoany.com / *fb7ZSMUoB2*
 > 
 > ### Joueur
-> asteptowe5k@princeton.edu / *9Mcw1V*
-> mcasaccia5l@aol.com / *KH8MX2v*
+> - asteptowe5k@princeton.edu / *9Mcw1V*
+> - mcasaccia5l@aol.com / *KH8MX2v*
 
 ## API
 >
