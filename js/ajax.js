@@ -1,5 +1,6 @@
 'use strict';
 
+// AJAX request creation function using API REST architecture
 function ajaxRequest(type, url, callback, data = null) {
     let xhr;
 
@@ -28,6 +29,7 @@ function ajaxRequest(type, url, callback, data = null) {
     xhr.send(data);
 }
 
+// Errors dealing function
 function httpErrors(errorCode) {
     let messages =
         {
