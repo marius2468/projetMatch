@@ -37,10 +37,15 @@ function displayNotifs(notifs){
 }
 
 function confirmNotif(id_person, id_match){
-    let data = 'id_person=' + id_person + '&id_match=' + ''
-    ajaxRequest('PUT', '../php/libraries/Notification/updateNotification.php', callback, )
+    let data = 'id_person=' + id_person + '&id_match=' + id_match;
+    ajaxRequest('PUT', '../php/libraries/Notification/updateNotification.php', callback, data);
 }
 
 function deleteNotif(id_person, id_match){
+    let data = '?id_person=' + id_person + '&id_match=' + id_match;
+    ajaxRequest('DELETE', '../php/libraries/Notification/deleteNotification.php' + data, callback);
+}
 
+function callback(){
+    location.reload();
 }

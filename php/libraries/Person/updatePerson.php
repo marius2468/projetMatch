@@ -14,14 +14,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'PUT'){
     require_once("../../models/Person.php");
     $db = new Database();
     $dataBase = $db->getConnection();
-    $data = json_decode(file_get_contents("php://input"));
-    if (!empty($data->password) && !empty($data->id_photo) && !empty($data->id_city) && !empty($data->age) && !empty($data->id_physical_form) && !empty($_SESSION['id_person'])) {
+    if (!empty($_GET['password']) && !empty($_GET['application_note']) && !empty($_GET['id_photo']) && !empty($_GET['id_city']) && !empty($_GET['age']) && !empty($_GET['id_physical_form']) && !empty($_SESSION['id_person'])) {
         $person = new Person($dataBase);
-        $person->password = $data->password;
-        $person->id_photo = $data->id_photo;
-        $person->id_city = $data->id_city;
-        $person->age = $data->age;
-        $person->id_physical_form = $data->id_physical_form;
+        $person->password = $_GET['password'];
+        $person->id_photo = $_GET['id_photo'];
+        $person->id_city = $_GET['id_city'];
+        $person->age = $_GET['age'];
+        $person->id_physical_form = $_GET['id_physical_form'];
+        $person->application_note = $_GET['application_note'];
         $result = $person->updatePerson($_SESSION['id_person']);
         if ($result){
             http_response_code(200);

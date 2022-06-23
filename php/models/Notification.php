@@ -34,7 +34,7 @@ class Notification {
             $request = "UPDATE player_match
                         SET accept = true
                         WHERE id_match=:id_match AND id_person=:id_person;";
-            $statement = $this->connection->prepare();
+            $statement = $this->connection->prepare($request);
             $statement->bindParam(':id_match', $id_match, PDO::PARAM_INT);
             $statement->bindParam(':id_person', $id_person, PDO::PARAM_INT);
             $statement->execute();
@@ -50,7 +50,7 @@ class Notification {
         try {
             $request = "DELETE FROM player_match
                         WHERE id_match=:id_match AND id_person=:id_person";
-            $statement = $this->connection->prepare();
+            $statement = $this->connection->prepare($request);
             $statement->bindParam(':id_match', $id_match, PDO::PARAM_INT);
             $statement->bindParam(':id_person', $id_person, PDO::PARAM_INT);
             $statement->execute();

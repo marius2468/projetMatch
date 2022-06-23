@@ -12,6 +12,7 @@ class Person {
     public $id_photo;
     public $id_city;
     public $id_physical_form;
+    public $application_note;
 
 
     public function __construct($connection) {
@@ -124,22 +125,42 @@ class Person {
         $this->id_photo = htmlspecialchars(strip_tags($this->id_photo));
         $this->id_city = htmlspecialchars(strip_tags($this->id_city));
         $this->id_physical_form = htmlspecialchars(strip_tags($this->id_physical_form));;
+        $this->application_note = htmlspecialchars(strip_tags($this->application_note));;
         if ($id_person != null){
-            try {
-                $request = "UPDATE person SET password=:password, age=:age, id_photo=:id_photo, id_city=:id_city, id_physical_form=:id_physical_form WHERE id_person=:id_person;";
+            if ($this->password != null){
+                $request = "UPDATE person SET password=:password WHERE id_person=:id_person;";
                 $statement = $this->connection->prepare($request);
                 $statement->bindParam(':password', $this->password, PDO::PARAM_STR, 1000);
+                $statement->bindParam(':id_person', $id_person, PDO::PARAM_INT);
+                $statement->execute();
+            }
+            if ($this->application_note != null){
+                $request = "UPDATE person SET application_note=:application_note WHERE id_person=:id_person;";
+                $statement = $this->connection->prepare($request);
+                $statement->bindParam(':application_note', $this->application_note, PDO::PARAM_INT);
+                $statement->bindParam(':id_person', $id_person, PDO::PARAM_INT);
+                $statement->execute();
+            }
+            if ($this->age != ''){
+                $request = "UPDATE person SET age=:age WHERE id_person=:id_person;";
+                $statement = $this->connection->prepare($request);
                 $statement->bindParam(':age', $this->age, PDO::PARAM_INT);
-                $statement->bindParam(':id_photo', $this->id_photo, PDO::PARAM_INT);
-                $statement->bindParam(':id_city', $this->id_city, PDO::PARAM_INT);
+                $statement->bindParam(':id_person', $id_person, PDO::PARAM_INT);
+                $statement->execute();
+            }
+            if ($this->id_physical_form != null){
+                $request = "UPDATE person SET id_physical_form=:id_physical_form WHERE id_person=:id_person;";
+                $statement = $this->connection->prepare($request);
                 $statement->bindParam(':id_physical_form', $this->id_physical_form, PDO::PARAM_INT);
                 $statement->bindParam(':id_person', $id_person, PDO::PARAM_INT);
                 $statement->execute();
             }
-            catch (PDOException $exception){
-                error_log('Request error: '.$exception->getMessage());
-                return false;
-            }
+            $request = "UPDATE person SET id_photo=:id_photo, id_city=:id_city WHERE id_person=:id_person;";
+            $statement = $this->connection->prepare($request);
+            $statement->bindParam(':id_photo', $this->id_photo, PDO::PARAM_INT);
+            $statement->bindParam(':id_city', $this->id_city, PDO::PARAM_INT);
+            $statement->bindParam(':id_person', $id_person, PDO::PARAM_INT);
+            $statement->execute();
             return true;
         }
     }

@@ -12,10 +12,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'PUT'){
     require_once("../../models/Notification.php");
     $db = new Database();
     $dataBase = $db->getConnection();
-    $data = json_decode(file_get_contents("php://input"));
-    if (!empty($data->id_match) && !empty($data->id_person)) {
+    parse_str(file_get_contents("php://input"), $data);
+    if (!empty($data['id_match']) && !empty($data['id_person'])) {
         $notification = new Notification($dataBase);
-        if ($notification->updateNotification($data->id_match, $data->id_person)){
+        if ($notification->updateNotification($data['id_match'], $data['id_person'])){
             http_response_code(200);
             echo json_encode(["message" => "Match update with success"]);
         }
