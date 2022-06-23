@@ -14,7 +14,6 @@
 <body>
 
 <!--HEADER-->
-
 <nav class="navbar sticky-top navbar-fixed-top navbar-expand-lg bg-clearBlue p-md-3">
   <div class="container">
     <a class="navbar-brand" href="searchMatch.html"><img src="../img/icons/logo.svg" alt="logo" height="50" id="logo"></a>
@@ -34,10 +33,10 @@
   </div>
 </nav>
 
-<!--HEADER-->
-
 <div class="container-fluid">
   <div class="row flex-nowrap">
+
+    <!--Sidebar-->
     <div class="col-auto bg-clearBlue m-1 rounded shadow shadow-lg">
       <div class="d-flex flex-column align-items-center align-items-sm-start text-white min-vh-100 pt-2">
         <div class="nav nav-pills flex-column align-items-center align-items-sm-start gap-3">
@@ -60,9 +59,12 @@
       </div>
     </div>
 
+    <!--Match form-->
     <div class="col py-3 row">
       <div class="row" id="stat">
         <div class="col-12">
+
+          <!--Best player input-->
           <label class="form-label flex-nowrap">Meilleur joueur du match*</label>
           <div class="form-floating mb-3 d-flex">
             <label class="visually-hidden" for="bestPlayerInput">Mailleur joueur du match</label>
@@ -70,8 +72,12 @@
               <option selected value="">Choisir meilleur joueur...</option>
             </select>
           </div>
+
+
           <label class="form-label">*Champs obligatoires</label>
           <div class="alert" role="alert" id="errors"></div>
+
+          <!--Submit button-->
           <btn class="btn btn-darkYellow d-flex nav-item text-white shadow-lg p-3 mb-5 rounded-3 justify-content-center w-100" type="button" onclick="statEnter()"><span>Entrer les statistiques</span></btn>
         </div>
       </div>
@@ -82,7 +88,6 @@
 </div>
 
 <!--FOOTER-->
-
 <footer class="bg-clearBlue text-white text-center text-md-start">
   <div class="container p-4">
     <div class="row">
@@ -109,8 +114,5 @@
   </div>
 </footer>
 
-<!--FOOTER-->
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>

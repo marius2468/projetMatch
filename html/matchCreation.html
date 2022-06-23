@@ -14,7 +14,6 @@
 <body>
 
 <!--HEADER-->
-
 <nav class="navbar sticky-top navbar-fixed-top navbar-expand-lg bg-clearBlue p-md-3">
     <div class="container">
         <a class="navbar-brand" href="searchMatch.html"><img src="../img/icons/logo.svg" alt="logo" height="50" id="logo"></a>
@@ -34,10 +33,10 @@
     </div>
 </nav>
 
-<!--HEADER-->
-
 <div class="container-fluid">
     <div class="row flex-nowrap">
+
+        <!--Sidebar-->
         <div class="col-auto bg-clearBlue m-1 rounded shadow shadow-lg">
             <div class="d-flex flex-column align-items-center align-items-sm-start text-white min-vh-100 pt-2">
                 <div class="nav nav-pills flex-column align-items-center align-items-sm-start gap-3">
@@ -60,11 +59,13 @@
             </div>
         </div>
 
+        <!--Match creation frame-->
         <div class="col py-3 row">
             <div class="row">
                 <div class="col-12">
                     <h1 class="form-label d-flex justify-content-center p-3">Création d'un match</h1>
 
+                    <!--Sport input-->
                     <label class="form-label flex-nowrap">Type de sport*</label>
                     <div class="form-floating mb-3 d-flex">
                         <label class="visually-hidden" for="sportInput">Sport</label>
@@ -84,6 +85,7 @@
                         </select>
                     </div>
 
+                    <!--Town input-->
                     <label class="form-label flex-nowrap">Ville</label>
                     <div class="form-floating mb-3 d-flex">
                         <label class="visually-hidden" for="townInput">Ville</label>
@@ -112,24 +114,28 @@
                         </select>
                     </div>
 
+                    <!--Address input-->
                     <label class="form-label flex-nowrap">Adresse</label>
                     <div class="form-floating mb-3 d-flex">
                         <input type="text" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="addressInput" placeholder="address">
                         <label class="ps-4 text-darkGrey" for="addressInput">Entrez l'adresse du match</label>
                     </div>
 
+                    <!--Date input-->
                     <label class="form-label flex-nowrap">Date et Heure*</label>
                     <div class="form-floating mb-3 d-flex">
                         <input type="datetime-local" class="form-control rounded-3 bg-clearGrey shadow shadow-inset text-darkGrey py-1" id="hourInput" placeholder="hour">
                         <label class="ps-4 text-darkGrey visually-hidden" for="hourInput">Entrez l'heure de début du match</label>
                     </div>
 
+                    <!--Duration input-->
                     <label class="form-label flex-nowrap">Durée*</label>
                     <div class="form-floating mb-3 d-flex">
                         <input type="number" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="durationInput" placeholder="duration">
                         <label class="ps-4 text-darkGrey" for="durationInput">Entrez la durée d'un match en min</label>
                     </div>
 
+                    <!--Price input-->
                     <label class="form-label flex-nowrap">Prix*</label>
                     <div class="form-floating mb-3 d-flex">
                         <input type="number" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="priceInput" placeholder="price">
@@ -137,6 +143,8 @@
                     </div>
 
                     <label class="form-label">*Champs obligatoires</label>
+
+                    <!--Submit button-->
                     <button class="btn btn-darkYellow d-flex nav-item text-white shadow-lg p-3 mb-5 rounded-3 justify-content-center w-100" onclick="createClicked()"><span>Créer le match</span></button>
                 </div>
             </div>
@@ -146,7 +154,6 @@
 </div>
 
 <!--FOOTER-->
-
 <footer class="bg-clearBlue text-white text-center text-md-start">
     <div class="container p-4">
         <div class="row">
@@ -173,8 +180,5 @@
     </div>
 </footer>
 
-<!--FOOTER-->
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -12,7 +12,6 @@
 <body>
 
 <!--HEADER-->
-
 <nav class="navbar sticky-top navbar-fixed-top navbar-expand-lg bg-clearBlue p-md-3">
     <div class="container">
         <a class="navbar-brand" href="searchMatch.html"><img src="../img/icons/logo.svg" alt="logo" height="50" id="logo"></a>
@@ -32,12 +31,11 @@
     </div>
 </nav>
 
-<!--HEADER-->
-
 <div class="position-relative justify-content-center start-25 w-50 row">
 
     <h1 class="form-label d-flex justify-content-center p-3">Modification du profil</h1>
 
+    <!--Photo modification-->
     <div class="d-flex flex-column justify-content-center flex-fill align-items-center mb-3">
 
         <div class="d-flex mb-3">
@@ -83,10 +81,12 @@
         </div>
     </div>
 
+    <!--Name Firstname output-->
     <div class="p-3 mb-3 rounded-3 bg-clearGrey border-0">
         <span id="nameOutput"></span>
     </div>
 
+    <!--Town modification-->
     <label class="form-label d-flex">Ville</label>
     <div class="form-floating mb-3">
         <select id="townOutput" class="form-select rounded-3 bg-clearGrey shadow shadow-inset p-1" required>
@@ -113,12 +113,14 @@
         </select>
     </div>
 
+    <!--Age modification-->
     <label class="form-label d-flex">Âge</label>
     <div class="form-floating mb-3">
         <input type="text" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="ageOutput" placeholder="âge" value="">
         <label class="ps-4 text-darkGrey" for="ageOutput">Entrez votre âge</label>
     </div>
 
+    <!--Password modification-->
     <label class="form-label d-flex">Mot de passe</label>
     <div class="form-floating mb-2">
         <input type="password" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="passwordInput1" placeholder="mot de  passe" value="•••••••••">
@@ -129,14 +131,15 @@
         <label class="ps-4 text-darkGrey" for="passwordInput2">Confirmation du mot de passe</label>
     </div>
 
+    <!--Physical form modification-->
     <label class="form-label d-flex mb-3">Sélectionnez votre forme sportive</label>
-
     <div class="form-floating mb-3">
         <label class="visually-hidden" for="formSelect">Preference</label>
         <select class="form-select rounded-3 bg-clearGrey shadow shadow-inset p-1" id="formSelect">
         </select>
     </div>
 
+    <!--App rating modification-->
     <div class="p-3 mb-3 rounded-3 bg-clearGrey border-0 d-flex flex-nowrap align-items-center">
         <img src="../img/icons/LogoBisStrong.svg" alt="logo">
         <span class="px-2 flex-grow-1">Notez l'application</span>
@@ -146,10 +149,12 @@
         </div>
     </div>
 
+    <!--Errors frame-->
     <div id="errors">
 
     </div>
 
+    <!--Submit button-->
     <div class="mb-3 align-items-center">
         <a class="btn btn-darkYellow nav-item text-white shadow rounded-3" onclick="submitForm()">
             <img src="../img/icons/tick-square.svg" alt="logo">
@@ -159,7 +164,6 @@
 </div>
 
 <!--FOOTER-->
-
 <footer class="bg-clearBlue text-white text-center text-md-start">
     <div class="container p-4">
         <div class="row">
@@ -186,11 +190,8 @@
     </div>
 </footer>
 
-<!--FOOTER-->
-
 <script src="../js/ajax.js"></script>
 <script src="../js/updatePerson.js"></script>
 <script src="../js/application.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>
