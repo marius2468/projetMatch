@@ -68,10 +68,14 @@ function displayModifPerson(person){
 function submitForm(event){
     let id_photo = $('input[name="avatarInput"]:checked').val();
     let id_city = $('#townOutput').val();
+
+    let password1 = $('#passwordInput1').val();
+    let password2 = $('#passwordInput2').val();
+
     let age = $('#ageOutput').val();
-    let password = $('#passwordInput').val();
     let id_physical_form = $('#formSelect').val();
     let application_note = $('#starText').val();
+
     if (isNaN(age)){
         age = null;
     }
@@ -81,15 +85,22 @@ function submitForm(event){
     if (isNaN(application_note)){
         application_note = null;
     }
-    if (password === '•••••••••'){
-        password = null;
+    if (password1 === '•••••••••'){
+        password1 = null;
     }
-    let data = 'id_photo=' + id_photo + '&id_city=' + id_city + '&password=' + password + '&age=' + age + '&id_physical_form=' + id_physical_form + '&application_note=' + application_note;
-    console.log(data);
-    ajaxRequest('PUT', '../php/libraries/Person/updatePerson.php',putSuccess, data);
+
+    if (password1 == password2){
+        let data = 'id_photo=' + id_photo + '&id_city=' + id_city + '&password=' + password1 + '&age=' + age + '&id_physical_form=' + id_physical_form + '&application_note=' + application_note;
+        console.log(data);
+        ajaxRequest('PUT', '../php/libraries/Person/updatePerson.php',putSuccess, data);
+    } else {
+        // event.preventDefault();
+        $('#errors').html('<label class="form-label">Mots de passes différents</label>');
+    }
 }
 
 function putSuccess(){
+    console.log("request update success");
     document.location.href="profile.html";
 }
 
