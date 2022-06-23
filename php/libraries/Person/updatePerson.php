@@ -6,8 +6,8 @@ header("Access-Control-Allow-Methods: PUT");
 header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
-require_once("../config/Database.php");
-require_once("../models/Person.php");
+require_once("../../config/Database.php");
+require_once("../../models/Person.php");
 
 if ($_SERVER['REQUEST_METHOD'] == 'PUT'){
     require_once("../../config/Database.php");
@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'PUT'){
     $db = new Database();
     $dataBase = $db->getConnection();
     parse_str(file_get_contents("php://input"), $data);
-    if (!empty($data['password']) && !empty($data['application_note']) && !empty($data['id_photo']) && !empty($data['id_city']) && !empty($data['age']) && !empty($data['id_physical_form']) && !empty($_SESSION['id_person'])) {
+    if (!empty($_SESSION['id_person'])) {
         $person = new Person($dataBase);
         $person->password = $data['password'];
         $person->id_photo = $data['id_photo'];

@@ -14,6 +14,14 @@ function displayModifPerson(person){
                     '    </div>';
             }
         }
+    } else {
+        for (let i = 1; i <= 5; i++) {
+            displayNote += '<div id="star' + i + '" onMouseUp="getStarRate(id)" onMouseOver="starFill(id)">\n' +
+                '        <img src="../img/icons/star.svg" alt="logo">\n' +
+                '    </div>';
+        }
+
+
     }
 
     let nbrMatchPlayed = '';
@@ -27,7 +35,7 @@ function displayModifPerson(person){
         nbrMatchPlayed = person[0].count + 'matchs joués';
     }
 
-    let age = "";
+    let age = '';
     if (person[0].age != null){
         age += person[0].age;
         $('#ageOutput').attr("value",age);
@@ -36,7 +44,20 @@ function displayModifPerson(person){
     $('#' + person[0].id_city).attr("selected","selected");
 
     if (person[0].id_physical_form != null){
+
+        $('#formSelect').append('<option value="1">Professionnel</option>\n' +
+            '        <option value="2">Confirmé</option>\n' +
+            '        <option value="3">Amateur</option>\n' +
+            '        <option value="4">Débutant</option>');
+
         $('#formSelect option[value=' + person[0].id_physical_form + ']').attr("selected","selected");
+    } else {
+
+        $('#formSelect').append('<option selected value="">...</option>\n' +
+            '        <option value="1">Professionnel</option>\n' +
+            '        <option value="2">Confirmé</option>\n' +
+            '        <option value="3">Amateur</option>\n' +
+            '        <option value="4">Débutant</option>');
     }
 
     $('#ratingOutput').append(displayNote);
@@ -45,25 +66,30 @@ function displayModifPerson(person){
 }
 
 function submitForm(event){
-
     let id_photo = $('input[name="avatarInput"]:checked').val();
     let id_city = $('#townOutput').val();
     let age = $('#ageOutput').val();
-    let password;
-    if ($('#passwordInput').val() == '•••••••••'){
-        password = null
-    } else {
-        password = $('#passwordInput').val();
-    }
+    let password = $('#passwordInput').val();
     let id_physical_form = $('#formSelect').val();
-    let application_note = $('#ratingOutput').val();
+    let application_note = $('#starText').val();
+    if (isNaN(age)){
+        age = null;
+    }
+    if (isNaN(id_physical_form)){
+        id_physical_form = null;
+    }
+    if (isNaN(application_note)){
+        application_note = null;
+    }
+    if (password === '•••••••••'){
+        password = null;
+    }
     let data = 'id_photo=' + id_photo + '&id_city=' + id_city + '&password=' + password + '&age=' + age + '&id_physical_form=' + id_physical_form + '&application_note=' + application_note;
     console.log(data);
     ajaxRequest('PUT', '../php/libraries/Person/updatePerson.php',putSuccess, data);
 }
 
 function putSuccess(){
-    console.log("request create success");
     document.location.href="profile.html";
 }
 
@@ -91,5 +117,5 @@ function starFill(id_star){
 function getStarRate(id_star){
     let id = id_star;
     let rate = id.slice(id.length - 1);
-    $('#ratingOutput').val(rate);
+    $('#starText').val(rate);
 }

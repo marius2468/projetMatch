@@ -117,7 +117,7 @@
 
     <label class="form-label d-flex">Âge</label>
     <div class="form-floating mb-3">
-        <input type="text" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="ageOutput" placeholder="âge">
+        <input type="text" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="ageOutput" placeholder="âge" value="">
         <label class="ps-4 text-darkGrey" for="ageOutput">Entrez votre âge</label>
     </div>
 
@@ -136,18 +136,14 @@
     <div class="form-floating mb-3">
         <label class="visually-hidden" for="formSelect">Preference</label>
         <select class="form-select rounded-3 bg-clearGrey shadow shadow-inset p-1" id="formSelect">
-            <option selected value="">...</option>
-            <option value="1">Professionnel</option>
-            <option value="2">Confirmé</option>
-            <option value="3">Amateur</option>
-            <option value="4">Débutant</option>
         </select>
     </div>
 
     <div class="p-3 mb-3 rounded-3 bg-clearGrey border-0 d-flex flex-nowrap align-items-center">
         <img src="../img/icons/LogoBisStrong.svg" alt="logo">
         <span class="px-2 flex-grow-1">Notez l'application</span>
-        <div class="d-flex flex-fill justify-content-between" id="ratingOutput" value="">
+        <input type="text" class="visually-hidden" id="starText" value="">
+        <div class="d-flex flex-fill justify-content-between" id="ratingOutput">
 
         </div>
     </div>
