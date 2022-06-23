@@ -12,7 +12,6 @@
 <body>
 
 <!--HEADER-->
-
 <nav class="navbar sticky-top bg-clearBlue">
     <div class="container-fluid">
         <a class="navbar-brand" href="connection.html">
@@ -21,17 +20,13 @@
     </div>
 </nav>
 
-<!--HEADER-->
-
 <!--Sign up form-->
-
 <form data-toggle="validator" role="form" id="signUpForm">
     <div class="position-relative justify-content-center start-25 w-50 row">
 
         <h1 class="form-label d-flex justify-content-center p-3">Inscription</h1>
 
         <!--Avatar choice-->
-
         <div class="d-flex flex-column justify-content-center flex-fill align-items-center mb-3">
 
             <label class="form-label">Choisissez votre avatar</label>
@@ -80,22 +75,21 @@
             </div>
         </div>
 
-        <!--Avatar choice-->
-
+        <!--Name choice-->
         <label class="form-label d-flex">Nom*</label>
         <div class="form-floating mb-3">
             <input type="text" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="nameInput" placeholder="nom" required>
             <label class="text-darkGrey ps-4" for="nameInput">Entrez votre nom</label>
         </div>
 
-
+        <!--First Name choice-->
         <label class="form-label d-flex">Prénom*</label>
         <div class="form-floating mb-3">
             <input type="text" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="firstNameInput" placeholder="prénom" required>
             <label class="ps-4 text-darkGrey" for="firstNameInput">Entrez votre prénom</label>
         </div>
 
-
+        <!--Town choice-->
         <label class="form-label d-flex">Ville</label>
         <div class="form-floating mb-3">
             <select class="form-select rounded-3 bg-clearGrey shadow shadow-inset" id="townInput" required>
@@ -123,6 +117,7 @@
             </select>
         </div>
 
+        <!--eMail choice-->
         <label class="form-label">E-Mail*</label>
         <div class="form-floating mb-2">
             <input  type="email" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="mailInput1" placeholder="mail" required>
@@ -133,6 +128,7 @@
             <label class="ps-4 text-darkGrey" for="mailInput2">Confirmation de votre e-mail</label>
         </div>
 
+        <!--Password choice-->
         <label class="form-label d-flex">Mot de passe*</label>
         <div class="form-floating mb-2">
             <input type="password" class="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="passwordInput1" placeholder="mot de  passe" required>
@@ -143,20 +139,20 @@
             <label class="ps-4 text-darkGrey" for="passwordInput2">Confirmation du mot de passe</label>
         </div>
 
+        <!--Password choice-->
         <label class="form-label">*Champs obligatoires</label>
 
+        <!--Errors frame-->
         <div id="errors">
 
         </div>
 
+        <!--Submit button-->
         <button class="btn btn-darkYellow nav-item text-white shadow-lg p-3 mb-5 rounded-3" id="signUp" type="submit">S'inscrire</button>
     </div>
 </form>
 
-<!--Sign up form-->
-
 <!--FOOTER-->
-
 <footer class="bg-clearBlue text-white text-center text-md-start">
     <div class="container p-4">
         <div class="row">
@@ -182,8 +178,6 @@
         <a class="text-white" href="connection.html">ChronoMatch.com</a>
     </div>
 </footer>
-
-<!--FOOTER-->
 
 <script src="../js/ajax.js"></script>
 <script src="../js/createPerson.js"></script>
