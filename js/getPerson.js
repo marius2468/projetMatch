@@ -96,11 +96,12 @@ function displayPerson(person){
         '  </div>');
 }
 
-
+// function sending a GET request to disconnect.php to end the SESSION
 function disconnect(event){
     ajaxRequest('GET', '../php/libraries/Person/disconnect.php', callback);
 }
 
+// callback function redirecting to the connection page
 function callback(message){
     console.log(message);
     document.location.href="connection.html";

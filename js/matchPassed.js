@@ -1,8 +1,12 @@
+// AJAX request to get all the passed matches
 ajaxRequest('GET', '../php/libraries/Match/getMatchPassedFuture.php?passed=2', displayMatchPassed)
 
+// callback function displaying passed matches
 function displayMatchPassed(matchs){
     for (let match of matchs){
         let date_time = match.date_time.split(' ');
+
+        // cases where there is no match data yet
         if (match.count == null){
             match.count = 0;
         }
@@ -18,6 +22,8 @@ function displayMatchPassed(matchs){
         if (match.path == null){
             match.path = '../img/icons/profile.svg';
         }
+
+        // displaying in html the match infos
         $('#match').append(
             '<div href="#" class="row g-3 align-items-center bg-clearYellow mt-3 rounded shadow shadow-inset py-3 justify-content-between text-white text-decoration-none">\n' +
             '   <h4 class="col-12 col-md-6 col-sm-12 col-lg-4 my-lg-1 fw-bold">' + match.city_name + '</h4>\n' +

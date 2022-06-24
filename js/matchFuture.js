@@ -1,5 +1,7 @@
+// AJAX request to get all the future matches
 ajaxRequest('GET', '../php/libraries/Match/getMatchPassedFuture.php?passed=1', displayMatchFuture);
 
+// callback function displaying future matches
 function displayMatchFuture(matchs){
     console.log(matchs);
 
@@ -8,6 +10,8 @@ function displayMatchFuture(matchs){
         if (match.count == null){
             match.count = 0;
         }
+
+        // displaying in html the match infos
         $('#match').append(
             '<div class="row g-3 align-items-center bg-clearYellow mt-3 rounded shadow py-3 justify-content-between text-white text-decoration-none">\n' +
             '   <h4 class="col-12 col-md-6 col-sm-12 col-lg-4 my-lg-1 fw-bold">' + match.city_name + '</h4>\n' +

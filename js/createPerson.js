@@ -1,3 +1,4 @@
+// function using POST request to give the input infos to createPerson.php to create a new person
 function onSubmit(event){
     let id_photo = $('input[name="avatarInput"]:checked').val();
     let name = $('#nameInput').val();
@@ -14,6 +15,7 @@ function onSubmit(event){
     }
 }
 
+// callback function redirecting to the main page
 function displaySuccess(){
     console.log("request create success");
     document.location.href="searchMatch.html";
