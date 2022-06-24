@@ -42,20 +42,3 @@ else{
     http_response_code(405);
     echo json_encode(["message" => "This method is not allowed"]);
 }
-
-/*
-
-{
-        "id_person": 1,
-        "first_name": "Grant",
-        "name": "Beldan",
-        "email": "gbeldan0@nationalgeographic.com",
-        "password": "gSCEln6Sw",
-        "goal_nb": 0,
-        "age": 48,
-        "id_photo": 1,
-        "id_city": 18,
-        "id_physical_form": 1
-    }
-
- */

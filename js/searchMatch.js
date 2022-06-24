@@ -3,16 +3,20 @@ function searchMatch(event){
     let city = $('#townInput').val();
     let sport = $('#sportInput').val();
     let period = $('#periodInput').val();
-    let complete = $('#completeInput').val();
+    let complete;
     $('#errors').html('');
     $('#match').html('');
-    if (complete !== 2){
+    if ($('#completeInput').is(':checked')){
+        complete = 2;
+    }
+    else{
         complete = 1;
     }
 
     // If all the input are filled , sends an AJAX request to get the matches required
     if (city != null && sport != null && period != null){
         let data = 'id_city=' + city + '&id_sport=' + sport + '&period=' + period + '&complete=' + complete;
+        console.log(data);
         ajaxRequest('GET', '../php/libraries/Match/getMatchs.php?' + data, displayMatchs);
     }
 }
