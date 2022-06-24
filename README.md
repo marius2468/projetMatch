@@ -57,6 +57,46 @@ Ce projet a été résalisé par **ROGERIEUX Maxence** et **FREMOND Marius** du 
 > - asteptowe5k@princeton.edu / *9Mcw1V*
 > - mcasaccia5l@aol.com / *KH8MX2v*
 
+## Script a faire pour voir le bon fonctionnement du site
+>
+> 1 - Se connecter au profile jmegson0@squarespace.com / y9n2fo
+> 
+> 2 - Verifier les matchs complet non-complet avec acceptation du profile
+> 
+> 3 - Changer valeurs profile
+> 
+> 4 - Verifier changement profile
+> 
+> 5 - Se déconnecter
+> 
+> 6 - Se connecter au profile bpipworth1@addtoany.com / fb7ZSMUoB2
+> 
+> 7 - Entrer dans la case statistiques
+> 
+> 8 - Remplir les statistiques
+> 
+> 9 - Se déconnecter
+> 
+> 10- Se connecter au profile asteptowe5k@princeton.edu / 9Mcw1V
+> 
+> 11- Verifier matchs à venir ou passées
+> 
+> 12- Créer un match Caen de FootBall le 26/06/2022
+> 
+> 13- Se déconnecter
+> 
+> 14- Créer un compte Marius
+> 
+> 15- Montrer que le profile est bon
+> 
+> 16- Rechercher le match et le réserver
+> 
+> 17- Se déconnecter
+> 
+> 18- Se connecter au profile asteptowe5k@princeton.edu / 9Mcw1V
+> 
+> 19- Aller à notifications
+
 ## API
 >
 > ### Arborescence
