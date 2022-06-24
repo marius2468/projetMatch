@@ -1,4 +1,8 @@
-// Get function who returns the element associated to a given id
+/**
+ * Get function who returns the element associated to a given id
+ * @param param
+ * @returns {{}|*|null}
+ */
 function $_GET(param) {
     var vars = {};
     window.location.href.replace( location.hash, '' ).replace(
@@ -20,7 +24,10 @@ let id_match = $_GET('id_match')
 // AJAX resquest sending the id of a match to get it
 ajaxRequest('GET', '../php/libraries/Match/getMatch.php?id_match=' + id_match, displayDetails);
 
-// callback function displaying the match infos
+/**
+ * callback function displaying the match infos
+ * @param match
+ */
 function displayDetails(match){
     console.log(match);
     let date_time = match[0].date_time.split(' ');
@@ -44,7 +51,10 @@ function displayDetails(match){
 // AJAX request to get all the participants for the best player selection
 ajaxRequest('GET', '../php/libraries/Person/getPerson.php?id_match=' + id_match, displayPersonStats);
 
-// displays the participants in the best player selection
+/**
+ * displays the participants in the best player selection
+ * @param persons
+ */
 function displayPersonStats(persons){
     for (let person of persons){
         $('#bestPlayerInput').append(
@@ -72,7 +82,10 @@ function statEnter(event){
     }
 }
 
-// callback function redirection to the stat page
+/**
+ * callback function redirection to the stat page
+ * @param message
+ */
 function redirect(message){
     console.log(message);
     document.location.href="statOrga.html";

@@ -1,4 +1,7 @@
-// function called when the search button in searchMatch.html is pressed
+/**
+ * function called when the search button in searchMatch.html is pressed
+ * @param event
+ */
 function searchMatch(event){
     let city = $('#townInput').val();
     let sport = $('#sportInput').val();
@@ -21,7 +24,10 @@ function searchMatch(event){
     }
 }
 
-// callback function displaying all the matches corresponding to the request
+/**
+ * callback function displaying all the matches corresponding to the request
+ * @param matchs
+ */
 function displayMatchs(matchs){
     console.log(matchs);
     for (let match of matchs){

@@ -1,5 +1,10 @@
+// AJAX request to get the person's infos
 ajaxRequest('GET', '../php/libraries/Person/getPerson.php', displayModifPerson);
 
+/**
+ * function that displays the user infos when they exist
+ * @param person
+ */
 function displayModifPerson(person){
     let displayNote =  '';
     if (person[0].application_note != null){
@@ -22,6 +27,7 @@ function displayModifPerson(person){
         }
     }
 
+    // number of matches played cases
     let nbrMatchPlayed = '';
     if (person[0].count == null){
         nbrMatchPlayed = '0 match joué';
@@ -33,12 +39,14 @@ function displayModifPerson(person){
         nbrMatchPlayed = person[0].count + 'matchs joués';
     }
 
+    // age cases
     let age = '';
     if (person[0].age != null){
         age += person[0].age;
         $('#ageOutput').attr("value",age);
     }
 
+    // user's town selected
     $('#' + person[0].id_city).attr("selected","selected");
 
     if (person[0].id_physical_form != null){
@@ -66,6 +74,10 @@ function displayModifPerson(person){
     $('#nameOutput').append(person[0].name + ' ' + person[0].first_name);
 }
 
+/**
+ * function that submits the user infos when they exist to modify it using AJAX requests
+ * @param event
+ */
 function submitForm(event){
     let id_photo = $('input[name="avatarInput"]:checked').val();
     let id_city = $('#townOutput').val();
@@ -101,6 +113,10 @@ function putSuccess(){
     document.location.href="profile.html";
 }
 
+/**
+ * function using the user rate to display it with stars
+ * @param id_star
+ */
 function starFill(id_star){
 
     var filledStar = "<a href=\"javascript:void(0)\" class=\"cursor-pointer\">\n" +
@@ -122,24 +138,12 @@ function starFill(id_star){
     }
 }
 
+/**
+ * function that get the app score using stars
+ * @param id_star
+ */
 function getStarRate(id_star){
     let id = id_star;
     let rate = id.slice(id.length - 1);
     $('#starText').val(rate);
 }
-
-// function displayModifPassword(){
-//     $('#passwordChange').html('<label className="form-label d-flex">Mot de passe</label>\n' +
-//         '    <div className="form-floating mb-2">\n' +
-//         '        <input type="password" className="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="passwordInput1"\n' +
-//         '               placeholder="mot de  passe">\n' +
-//         '            <label className="ps-4 text-darkGrey" htmlFor="passwordInput1">Entrez un mot de passe</label>\n' +
-//         '    </div>\n' +
-//         '    <div className="form-floating mb-3">\n' +
-//         '        <input type="password" className="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="passwordInput2"\n' +
-//         '               placeholder="mot de passe">\n' +
-//         '            <label className="ps-4 text-darkGrey" htmlFor="passwordInput2">Confirmation du mot de passe</label>\n' +
-//         '    </div>');
-//
-//     $('#isPasswordModified').attr("value",1);
-// }

@@ -20,7 +20,10 @@ let id_match = $_GET('id_match')
 // AJAX resquest sending the id of a match to get its infos
 ajaxRequest('GET', '../php/libraries/Match/getMatch.php?id_match=' + id_match, displayMatch);
 
-// callback function displaying the match infos
+/**
+ * callback function displaying the match infos
+ * @param match
+ */
 function displayMatch(match){
 
     let date_time = match[0].date_time.split(' ');
@@ -84,20 +87,29 @@ function displayMatch(match){
     ajaxRequest('GET', '../php/libraries/Person/getPerson.php?id_match=' + $_GET('id_match'), displayParticipants);
 }
 
-// function called when the book button is pressed to send a POST request to add the person in the participants
+/**
+ * function called when the book button is pressed to send a POST request to add the person in the participants
+ * @param event
+ */
 function reserveMatch(event){
     let id_match = $_GET('id_match');
     let data = 'id_match=' + id_match;
     ajaxRequest('POST', '../php/libraries/Notification/createNotification.php', displaySuccess, data);
 }
 
-// callback function closing the match frame
+/**
+ * callback function closing the match frame
+ * @param message
+ */
 function displaySuccess(message){
     $('#match').html('');
     $('#match').append('<span>' + message.message+ '</span>');
 }
 
-// function displaying participants of a given match
+/**
+ * function displaying participants of a given match
+ * @param participants
+ */
 function displayParticipants(participants){
     let element;
     element = document.createElement('div');

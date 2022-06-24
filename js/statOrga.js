@@ -1,7 +1,10 @@
 // AJAX request to get the match's statistics
 ajaxRequest('GET', '../php/libraries/Match/getStats.php', displayStats);
 
-// callback function displaying the match statistics
+/**
+ * callback function displaying the match statistics
+ * @param stats
+ */
 function displayStats(stats){
     console.log(stats);
     for (let stat of stats){

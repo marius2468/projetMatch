@@ -1,7 +1,10 @@
 // AJAX request to get all the passed matches
 ajaxRequest('GET', '../php/libraries/Match/getMatchPassedFuture.php?passed=2', displayMatchPassed)
 
-// callback function displaying passed matches
+/**
+ * callback function displaying passed matches
+ * @param matchs
+ */
 function displayMatchPassed(matchs){
     for (let match of matchs){
         let date_time = match.date_time.split(' ');

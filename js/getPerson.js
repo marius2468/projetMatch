@@ -1,7 +1,10 @@
 // AJAX request to get the person related to the SESSION
 ajaxRequest('GET', '../php/libraries/Person/getPerson.php', displayPerson);
 
-// function displaying the person's infos
+/**
+ * function displaying the person's infos
+ * @param person
+ */
 function displayPerson(person){
 
     // App rating displaying 5 stars depending on the user's rating
@@ -96,12 +99,18 @@ function displayPerson(person){
         '  </div>');
 }
 
-// function sending a GET request to disconnect.php to end the SESSION
+/**
+ * function sending a GET request to disconnect.php to end the SESSION
+ * @param event
+ */
 function disconnect(event){
     ajaxRequest('GET', '../php/libraries/Person/disconnect.php', callback);
 }
 
-// callback function redirecting to the connection page
+/**
+ * callback function redirecting to the connection page
+ * @param message
+ */
 function callback(message){
     console.log(message);
     document.location.href="connection.html";

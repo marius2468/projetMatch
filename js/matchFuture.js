@@ -1,7 +1,10 @@
 // AJAX request to get all the future matches
 ajaxRequest('GET', '../php/libraries/Match/getMatchPassedFuture.php?passed=1', displayMatchFuture);
 
-// callback function displaying future matches
+/**
+ * callback function displaying future matches
+ * @param matchs
+ */
 function displayMatchFuture(matchs){
     console.log(matchs);
 
