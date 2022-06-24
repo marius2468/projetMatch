@@ -39,6 +39,16 @@ Ce projet a été résalisé par **ROGERIEUX Maxence** et **FREMOND Marius** du 
 >
 > Ci-dessous quelques couple login/mdp intérressant pour voir le bon fonctionnement du site web.
 > 
+> ### Accés à la VM
+> - user1 / *MaxenxeRogerieux*
+> - user2 / *marius2468*
+> - adresse IP : 10.10.51.63
+> 
+> ### Accés à la BDD
+> - login : *projetmatch*
+> - password : *projetmatch*
+> - dbname : *projetmatch*
+> 
 > ### Organisateur
 > - jmegson0@squarespace.com / *y9n2fo*
 > - bpipworth1@addtoany.com / *fb7ZSMUoB2*
