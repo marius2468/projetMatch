@@ -2064,7 +2064,8 @@ VALUES  ('Lucrèce','Megson','jmegson0@squarespace.com','$2y$10$VpAcoFYv4T5bL8fa
 
 INSERT INTO match (address, date_time, price, score, duration, id_person, id_sport, id_city)
 VALUES  ('9 Vernon Alley', '2022-07-01 01:35:18', 6, '', '66 min', 1, 6, 15),
-        ('17 Reindahl Lane', '2022-06-03 09:25:19', 15, '8-3', '17 min', 2, 8, 9),
+        ('9 Vernon Alley', '2022-07-01 01:35:18', 6, '', '66 min', 1, 6, 15),
+        ('17 Reindahl Lane', '2022-06-03 09:25:19', 15, '', '17 min', 2, 8, 9),
         ('19 Prentice Crossing', '2022-07-07 18:51:24', 10, '', '59 min', 3, 1, 17),
         ('8988 Cambridge Way', '2022-07-05 06:13:12', 9, '', '39 min', 4, 8, 9),
         ('40 Brentwood Junction', '2022-05-21 05:29:11', 13, '', '71 min', 5, 2, 6),
@@ -2486,7 +2487,6 @@ VALUES  (1,201, 0, false,false),
         (198,398, 0, false,true),
         (199,399, 0, false,false),
         (200,400, 0, false,true),
-        (1,401, 0, false,true),
         (2,402, 0, false,true),
         (3,403, 0, false,false),
         (4,404, 0, false,false),
