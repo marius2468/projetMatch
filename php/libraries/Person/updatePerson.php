@@ -9,6 +9,7 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 require_once("../../config/Database.php");
 require_once("../../models/Person.php");
 
+// process the PUT request from js to update a person and deal with errors
 if ($_SERVER['REQUEST_METHOD'] == 'PUT'){
     require_once("../../config/Database.php");
     require_once("../../models/Person.php");

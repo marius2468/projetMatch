@@ -11,10 +11,19 @@ class Match {
     public $id_city;
     public $duration;
 
+    /**
+     * function to construct a match with the connection attribute
+     * @param $connection
+     */
     public function __construct($connection) {
         $this->connection = $connection;
     }
 
+    /**
+     * function to create a match whith all its infos
+     * @param $id_person
+     * @return bool
+     */
     public function createMatch($id_person){
         $this->address = htmlspecialchars(strip_tags($this->address));
         $this->date_time = htmlspecialchars(strip_tags($this->date_time));
@@ -44,6 +53,14 @@ class Match {
         return true;
     }
 
+    /**
+     * function using an SQL request to get all the matches and their infos in a given period, city, sport from the database
+     * @param $period
+     * @param $id_sport
+     * @param $id_city
+     * @param $complete
+     * @return matches
+     */
     public function getMatchs($period, $id_sport, $id_city, $complete){
         if ($complete == 2) { //complete
             try {
@@ -107,6 +124,11 @@ class Match {
         return $result;
     }
 
+    /**
+     * function using an SQL request to get all the match infos in a given period from the database
+     * @param $id_match
+     * @return match
+     */
     public function getMatch($id_match){
         try {
             $request = "SELECT m.address || ', ' || c.zip_code || ' ' || c.name || ', France' as address,
@@ -132,6 +154,11 @@ class Match {
         return $result;
     }
 
+    /**
+     * function using an SQL request to get the user statistics
+     * @param $id_person
+     * @return stats
+     */
     public function getStats($id_person){
         try {
             $date  = date('Y-m-d');
@@ -159,6 +186,13 @@ class Match {
         return $result;
     }
 
+    /**
+     * function using an SQL request to update the match data in the database with score and best player
+     * @param $id_match
+     * @param $id_person
+     * @param $score
+     * @return bool
+     */
     public function updateMatch($id_match, $id_person, $score){
         try {
             $request = "UPDATE player_match SET best_player=true WHERE id_match=:id_match AND id_person=:id_person;";
@@ -180,6 +214,12 @@ class Match {
         return true;
     }
 
+    /**
+     * function using an SQL request to get all the passed matches infos from the database
+     * @param $id_person
+     * @param $passed
+     * @return false
+     */
     public function getMatchPassedFuture($id_person, $passed){
         if ($passed == 2){
             try {

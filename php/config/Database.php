@@ -1,5 +1,6 @@
 <?php
 
+// Database class with the constants attribute
 class Database {
     private $dbUser = "azerty";
     private $dbPassword = "azerty";
@@ -8,6 +9,7 @@ class Database {
     private $dbPort = "5432";
     public $connection;
 
+//    function that binds the SESSION data with the class attribute
     public function getConnection(){
         try {
             session_start();

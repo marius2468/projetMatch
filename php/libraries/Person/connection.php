@@ -6,7 +6,7 @@ header("Access-Control-Allow-Methods: GET");
 header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
-
+// process the GET request from js to check the user infos for the connection and deal with errors
 if ($_SERVER['REQUEST_METHOD'] == 'GET'){
     require_once("../../config/Database.php");
     require_once("../../models/Person.php");

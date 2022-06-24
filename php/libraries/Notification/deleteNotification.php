@@ -6,7 +6,7 @@ header("Access-Control-Allow-Methods: DELETE");
 header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
-
+// process the DELETE request from js to delete a notification and deal with errors
 if ($_SERVER['REQUEST_METHOD'] == 'DELETE'){
     require_once("../../config/Database.php");
     require_once("../../models/Notification.php");

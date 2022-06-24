@@ -3,10 +3,19 @@
 class Notification {
     private $connection;
 
+    /**
+     * function to construct a notification with the connection attribute
+     * @param $connection
+     */
     public function __construct($connection) {
         $this->connection = $connection;
     }
 
+    /**
+     * function using an SQL request to get all the user notifications and their infos from the database
+     * @param $id_person
+     * @return false
+     */
     public function getNotification($id_person){
         try {
             $request = "SELECT p.name, p.first_name, p.id_person, p2.path, m.id_match, m.date_time, m.address || ', ' || c.zip_code || ' ' || c.name || ', France' as address
@@ -29,6 +38,12 @@ class Notification {
         return $result;
     }
 
+    /**
+     * function using an SQL request to update the notification data in the database if it's accepted or not
+     * @param $id_match
+     * @param $id_person
+     * @return bool
+     */
     public function updateNotification($id_match, $id_person){
         try {
             $request = "UPDATE player_match
@@ -46,6 +61,12 @@ class Notification {
         return true;
     }
 
+    /**
+     * function using an SQL request to delete a notification in the database
+     * @param $id_match
+     * @param $id_person
+     * @return bool
+     */
     public function deleteNotification($id_match, $id_person){
         try {
             $request = "DELETE FROM player_match
@@ -62,6 +83,12 @@ class Notification {
         return true;
     }
 
+    /**
+     * function using an SQL request to create a notification in the database
+     * @param $id_match
+     * @param $id_person
+     * @return bool
+     */
     public function createNotification($id_match, $id_person){
         try {
             $request = "INSERT INTO player_match (id_match, id_person, nb_goal, best_player, accept)

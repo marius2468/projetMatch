@@ -6,6 +6,7 @@ header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
+// process the POST request from js to create a person and deal with errors
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     require_once("../../config/Database.php");
     require_once("../../models/Person.php");

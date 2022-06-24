@@ -14,11 +14,18 @@ class Person {
     public $id_physical_form;
     public $application_note;
 
-
+    /**
+     * function to construct a person with the connection attribute
+     * @param $connection
+     */
     public function __construct($connection) {
         $this->connection = $connection;
     }
 
+    /**
+     * function verifying if a user already exist
+     * @return bool
+     */
     public function verifyPerson(){
         try {
             $request = "SELECT email FROM person WHERE email=:email";
@@ -37,6 +44,10 @@ class Person {
         return true;
     }
 
+    /**
+     * function using an SQL request to create a person in the database
+     * @return false|mixed
+     */
     public function createPerson(){
         $this->first_name = htmlspecialchars(strip_tags($this->first_name));
         $this->name = htmlspecialchars(strip_tags($this->name));
@@ -76,6 +87,12 @@ class Person {
         return $result;
     }
 
+    /**
+     * function using an SQL request to get a person or a match in the database from their id's
+     * @param $id_match
+     * @param $id_person
+     * @return false
+     */
     public function getPerson($id_match, $id_person){
         if ($id_person != null){
             try {
@@ -119,6 +136,11 @@ class Person {
         return $result;
     }
 
+    /**
+     * function using an SQL request to update a person in the database
+     * @param $id_person
+     * @return bool|void
+     */
     public function updatePerson($id_person){
         $this->id_photo = htmlspecialchars(strip_tags($this->id_photo));
         $this->id_city = htmlspecialchars(strip_tags($this->id_city));
@@ -161,6 +183,12 @@ class Person {
         }
     }
 
+    /**
+     * function checking the mail and password to connect the user
+     * @param $email
+     * @param $password
+     * @return false|mixed
+     */
     public function connection($email, $password){
         try {
             $request = "SELECT password, id_person FROM person WHERE email=:email;";
