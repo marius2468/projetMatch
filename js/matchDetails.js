@@ -1,3 +1,4 @@
+// Get function who returns the element associated to a given id
 function $_GET(param) {
     var vars = {};
     window.location.href.replace( location.hash, '' ).replace(
@@ -13,15 +14,23 @@ function $_GET(param) {
     return vars;
 }
 
+// returns the match associated to the given id
 let id_match = $_GET('id_match')
 
+// AJAX resquest sending the id of a match to get its infos
 ajaxRequest('GET', '../php/libraries/Match/getMatch.php?id_match=' + id_match, displayMatch);
 
+// callback function displaying the match infos
 function displayMatch(match){
+
     let date_time = match[0].date_time.split(' ');
+
+    // case when there is no match
     if (match[0].count == null){
         match[0].count = 0;
     }
+
+    // case where match is full => no book button, displays the match details
     if (match[0].count === match[0].nb_max){
         $('#match').append('<div class="row g-3 align-items-center bg-clearYellow mt-3 rounded shadow py-3 justify-content-between text-white text-decoration-none" id="match2">\n' +
             '                   <h4 class="col-12 my-lg-1 fw-bold">' + match[0].address + '</h4>\n' +
@@ -46,6 +55,7 @@ function displayMatch(match){
             '                   </div>\n' +
             '               </div>');
     }
+    // case where match is not full => book button, displays the match details
     else{
         $('#match').append('<div class="row g-3 align-items-center bg-clearYellow mt-3 rounded shadow py-3 justify-content-between text-white text-decoration-none" id="match2">\n' +
             '                   <h4 class="col-12 my-lg-1 fw-bold">' + match[0].address + '</h4>\n' +
@@ -70,20 +80,24 @@ function displayMatch(match){
             '                   </div>\n' +
             '               </div>');
     }
+    // AJAX request sending the match id to get all the participants
     ajaxRequest('GET', '../php/libraries/Person/getPerson.php?id_match=' + $_GET('id_match'), displayParticipants);
 }
 
+// function called when the book button is pressed to send a POST request to add the person in the participants
 function reserveMatch(event){
     let id_match = $_GET('id_match');
     let data = 'id_match=' + id_match;
     ajaxRequest('POST', '../php/libraries/Notification/createNotification.php', displaySuccess, data);
 }
 
+// callback function closing the match frame
 function displaySuccess(message){
     $('#match').html('');
     $('#match').append('<span>' + message.message+ '</span>');
 }
 
+// function displaying participants of a given match
 function displayParticipants(participants){
     let element;
     element = document.createElement('div');
@@ -93,6 +107,8 @@ function displayParticipants(participants){
     element2.innerHTML = 'Liste des participants';
     element.append(element2);
     let element3;
+
+    // displaying infos for each participant
     for (let participant of participants) {
         element3 = document.createElement('div');
         element3.className = 'row bg-clearYellow rounded g-2 my-2 shadow';

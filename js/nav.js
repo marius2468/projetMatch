@@ -1,3 +1,4 @@
+// nav function called in all files to display the navbar
 function nav(){
     let link1 = document.getElementById('nav-button1');
     let link2 = document.getElementById('nav-button2');
@@ -16,5 +17,6 @@ function nav(){
         link3.innerHTML = 'Profile';
     }
 }
+
 window.addEventListener('resize', nav);
 window.addEventListener('load', nav);

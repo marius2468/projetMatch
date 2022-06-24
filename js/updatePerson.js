@@ -128,18 +128,18 @@ function getStarRate(id_star){
     $('#starText').val(rate);
 }
 
-function displayModifPassword(){
-    $('#passwordChange').html('<label className="form-label d-flex">Mot de passe</label>\n' +
-        '    <div className="form-floating mb-2">\n' +
-        '        <input type="password" className="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="passwordInput1"\n' +
-        '               placeholder="mot de  passe">\n' +
-        '            <label className="ps-4 text-darkGrey" htmlFor="passwordInput1">Entrez un mot de passe</label>\n' +
-        '    </div>\n' +
-        '    <div className="form-floating mb-3">\n' +
-        '        <input type="password" className="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="passwordInput2"\n' +
-        '               placeholder="mot de passe">\n' +
-        '            <label className="ps-4 text-darkGrey" htmlFor="passwordInput2">Confirmation du mot de passe</label>\n' +
-        '    </div>');
-
-    $('#isPasswordModified').attr("value",1);
-}
+// function displayModifPassword(){
+//     $('#passwordChange').html('<label className="form-label d-flex">Mot de passe</label>\n' +
+//         '    <div className="form-floating mb-2">\n' +
+//         '        <input type="password" className="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="passwordInput1"\n' +
+//         '               placeholder="mot de  passe">\n' +
+//         '            <label className="ps-4 text-darkGrey" htmlFor="passwordInput1">Entrez un mot de passe</label>\n' +
+//         '    </div>\n' +
+//         '    <div className="form-floating mb-3">\n' +
+//         '        <input type="password" className="form-control rounded-3 bg-clearGrey shadow shadow-inset" id="passwordInput2"\n' +
+//         '               placeholder="mot de passe">\n' +
+//         '            <label className="ps-4 text-darkGrey" htmlFor="passwordInput2">Confirmation du mot de passe</label>\n' +
+//         '    </div>');
+//
+//     $('#isPasswordModified').attr("value",1);
+// }

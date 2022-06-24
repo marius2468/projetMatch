@@ -1,3 +1,4 @@
+// function called when the search button in searchMatch.html is pressed
 function searchMatch(event){
     let city = $('#townInput').val();
     let sport = $('#sportInput').val();
@@ -11,6 +12,8 @@ function searchMatch(event){
     else{
         complete = 1;
     }
+
+    // If all the input are filled , sends an AJAX request to get the matches required
     if (city != null && sport != null && period != null){
         let data = 'id_city=' + city + '&id_sport=' + sport + '&period=' + period + '&complete=' + complete;
         console.log(data);
@@ -18,6 +21,7 @@ function searchMatch(event){
     }
 }
 
+// callback function displaying all the matches corresponding to the request
 function displayMatchs(matchs){
     console.log(matchs);
     for (let match of matchs){
@@ -25,6 +29,8 @@ function displayMatchs(matchs){
         if (match.count == null){
             match.count = 0;
         }
+
+        // displaying in html
         $('#match').append(
             '<a href="matchSelected.html?id_match=' + match.id_match +'&sportPath=' + match.path + '&name_sport=' + match.name_sport + '" class="row g-3 align-items-center bg-clearYellow mt-3 rounded shadow shadow-inset py-3 justify-content-between text-white text-decoration-none">\n' +
             '   <h4 class="col-12 col-md-6 col-sm-12 col-lg-4 my-lg-1 fw-bold">' + match.city_name + '</h4>\n' +

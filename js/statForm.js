@@ -1,3 +1,4 @@
+// Get function who returns the element associated to a given id
 function $_GET(param) {
     var vars = {};
     window.location.href.replace( location.hash, '' ).replace(
@@ -13,13 +14,18 @@ function $_GET(param) {
     return vars;
 }
 
+// returns the match associated to the given id
 let id_match = $_GET('id_match')
 
+// AJAX resquest sending the id of a match to get it
 ajaxRequest('GET', '../php/libraries/Match/getMatch.php?id_match=' + id_match, displayDetails);
 
+// callback function displaying the match infos
 function displayDetails(match){
     console.log(match);
     let date_time = match[0].date_time.split(' ');
+
+    // displaying in html
     $('#stat').prepend(
         '<h1 class="form-label d-flex justify-content-center p-3">Statistiques</h1>' +
         '<div class="btn btn-clearBlue d-flex align-items-center justify-content-around text-white shadow-lg p-3 mb-5 rounded-3 justify-content-center">\n' +
@@ -35,8 +41,10 @@ function displayDetails(match){
     )
 }
 
+// AJAX request to get all the participants for the best player selection
 ajaxRequest('GET', '../php/libraries/Person/getPerson.php?id_match=' + id_match, displayPersonStats);
 
+// displays the participants in the best player selection
 function displayPersonStats(persons){
     for (let person of persons){
         $('#bestPlayerInput').append(
@@ -45,21 +53,26 @@ function displayPersonStats(persons){
     }
 }
 
+//
 function statEnter(event){
     let best_player = $('#bestPlayerInput').val();
     let score = $('#scoreInput').val();
+
+    // check if all the inputs are filled
     if ((!best_player) || (!score)){
         console.log('pas rempli');
         $('#errors').html('Veuillez entrer tout les champs !');
         $('#errors').show();
     }
     else {
+        // AJAX request to update the match infos
         $('#errors').hide();
         let data = 'id_match=' + id_match + '&score=' + score + '&id_person=' + best_player;
         ajaxRequest('PUT', '../php/libraries/Match/updateMatch.php', redirect, data);
     }
 }
 
+// callback function redirection to the stat page
 function redirect(message){
     console.log(message);
     document.location.href="statOrga.html";

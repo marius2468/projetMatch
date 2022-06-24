@@ -1,9 +1,14 @@
+// AJAX request to get all the user's notifications
 ajaxRequest('GET', '../php/libraries/Notification/getNotification.php', displayNotifs);
 
+// callback function displaying the notifications
 function displayNotifs(notifs){
     console.log(notifs);
+
     for (let notif of notifs){
         let date_time = notif.date_time.split(' ');
+
+        // displaying in html the notification
         $('#notifs').append(
             '<div class="col-lg-4 col-md-6 col-xs-12 col-12 rounded bg-clearGrey m-3 h-200 d-flex justify-content-around">\n' +
             '   <div class="row">\n' +
@@ -36,16 +41,19 @@ function displayNotifs(notifs){
     }
 }
 
+// PUT request to create a notifiaction when the validate button is pressed
 function confirmNotif(id_person, id_match){
     let data = 'id_person=' + id_person + '&id_match=' + id_match;
     ajaxRequest('PUT', '../php/libraries/Notification/updateNotification.php', callback, data);
 }
 
+// DELETE button when the delete button is pressed
 function deleteNotif(id_person, id_match){
     let data = '?id_person=' + id_person + '&id_match=' + id_match;
     ajaxRequest('DELETE', '../php/libraries/Notification/deleteNotification.php' + data, callback);
 }
 
+// callback function to reload the page after pressing a button
 function callback(){
     location.reload();
 }
